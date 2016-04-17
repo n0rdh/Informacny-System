@@ -16,6 +16,7 @@ System::System():
 
 System::~System()
 {
+
 	delete zakaznici_;
 	delete predajne_;
 	delete mineralky_;
