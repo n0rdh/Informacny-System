@@ -5,7 +5,6 @@
 #include "Stack.h"
 #include "ArrayList.h"
 #include "Objednavka.h"
-#include "AutoPrevoz.h"
 #include "Dodavka.h"
 
 class Velkosklad

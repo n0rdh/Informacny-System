@@ -54,9 +54,6 @@
     <ClInclude Include="Datum.h">
       <Filter>Header Files\Aplikacia</Filter>
     </ClInclude>
-    <ClInclude Include="AutoPrevoz.h">
-      <Filter>Header Files\Aplikacia</Filter>
-    </ClInclude>
     <ClInclude Include="PolozkaOBJ.h">
       <Filter>Header Files\Aplikacia</Filter>
     </ClInclude>
@@ -129,9 +126,6 @@
       <Filter>Source Files\Aplikacia</Filter>
     </ClCompile>
     <ClCompile Include="Zakaznik.cpp">
-      <Filter>Source Files\Aplikacia</Filter>
-    </ClCompile>
-    <ClCompile Include="AutoPrevoz.cpp">
       <Filter>Source Files\Aplikacia</Filter>
     </ClCompile>
     <ClCompile Include="System.cpp">

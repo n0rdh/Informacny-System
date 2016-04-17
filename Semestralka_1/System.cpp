@@ -16,10 +16,13 @@ System::System():
 
 System::~System()
 {
-
+	vymazVsetkychZakaznikov();
 	delete zakaznici_;
+	vymazVsetkychZakaznikov();
 	delete predajne_;
+	vymazVsetkyMineralky();
 	delete mineralky_;
+	vymazVsetkychDodavatelov();
 	delete dodavatelia_;
 	delete sklad_;
 }
@@ -201,6 +204,12 @@ void System::vyskladnenie()
 	sklad_->vyskladnenie(aktualDatum_);
 }
 //___________________________________________________________________________POMOCNE FUNKCIE
+void System::nastavDatum()
+{
+	Datum* aktualnyDatum = new Datum();
+	aktualDatum_ = aktualnyDatum->aktualnyDatum();
+}
+
 void System::zoradPole(DS::ArrayList<string>& pole)
 {
 	bool vymeneny = true;
@@ -267,11 +276,44 @@ Mineralna_voda * System::najdiMineralnuVodu(const std::string & nazov)
 	}
 	return nullptr;	
 }
+
 void System::vymazVsetkypolozky(ArrayList<PolozkaOBJ*>* p)
 {
 	for (auto polozka : *p)
 	{
 		delete polozka;
+	}
+}
+
+void System::vymazVsetkychZakaznikov()
+{
+	for (auto zakaznik : *zakaznici_)
+	{
+		delete zakaznik;
+	}
+}
+
+void System::vymazVsetkyPredajne()
+{
+	for (auto predajna : *predajne_)
+	{
+		delete predajna;
+	}
+}
+
+void System::vymazVsetkyMineralky()
+{
+	for (auto mineralka : *mineralky_)
+	{
+		delete mineralka;
+	}
+}
+
+void System::vymazVsetkychDodavatelov()
+{
+	for (auto dodavatel : *dodavatelia_)
+	{
+		delete dodavatel;
 	}
 }
 // KONTROLOVANIE DATUMU

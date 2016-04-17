@@ -22,7 +22,7 @@ public:
 								  const std::string& adresa);
 	bool pridanieNovehoZakaznika(const std::string& meno,
 								 const std::string& adresa);
-	bool pridanieNovejPredajne(const std::string& menoZakaznika,
+	bool pridanieNovejPredajne(const std::string& menoZakaznika,	  
 							   const std::string& adresa, const int zona);
 	bool zaevidovanieObjednavky(const std::string& adresaPredajna,
 								int datumDorucenia,
@@ -42,7 +42,11 @@ public:
 
 	bool kontrolaDatumu(int datum);
 	void vymazVsetkypolozky(DS::ArrayList<PolozkaOBJ*>* p);
-	void vymazVsetkoZoZoznamu();
+	void vymazVsetkychZakaznikov();
+	void vymazVsetkychZakaznikov();
+	void vymazVsetkyPredajne();
+	void vymazVsetkyMineralky();
+	void vymazVsetkychDodavatelov();
 
 	void zoradPole(DS::ArrayList<std::string>& pole);
 
@@ -51,11 +55,7 @@ public:
 	Zakaznik * najdiZakaznika(const std::string & nazov);
 	Predajna * najdiPredajnu(const std:: string & adresa);
 
-	void nastavDatum()
-	{
-		Datum* aktualnyDatum = new Datum();
-		aktualDatum_ = aktualnyDatum->aktualnyDatum();
-	}
+	void nastavDatum();
 
 	~System();
 

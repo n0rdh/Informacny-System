@@ -20,6 +20,18 @@ Velkosklad::Velkosklad(const Velkosklad & dalsiVelkosklad) :
 {															
 }
 
+Velkosklad::~Velkosklad()
+{
+	vymazVsetkyDodavky();
+	delete dodavky_;
+	vymazVsetkoVAute();
+	delete autoPrevoz_;
+	vymazVsetkyObjednavky();
+	delete objednavky_;
+	vymazVsetkypolozky(sklad_);
+	delete sklad_;
+}
+
 bool Velkosklad::zaevidujObjednavku(Objednavka * pObjednavka)
 {
 	objednavky_->add(pObjednavka);
@@ -46,20 +58,27 @@ void Velkosklad::odovzdajZakanikovy()
 {
 	if (autoPrevoz_->isEmpty())
 	{
-		cout << "  Auto je uz pradne" << endl;
+		cout << "  Auto je prazdne" << endl;
 		return;
 	}
-	cout << "$ Objednavka: ";
-	autoPrevoz_->pop()->vypisObjednavku();
-	cout << "ODOVZDANA zakaznikovi !" << endl;
+	cout << "$ Objednavka";
+	autoPrevoz_->pop()->oznacOdoslanu();
+	cout << " ODOVZDANA zakaznikovi " << endl;
 }
 
 void Velkosklad::vyskladnenie(int datum)
 {
 	PriorityQueue_Heap<Objednavka*>* zoradenie = new PriorityQueue_Heap<Objednavka*>();
-	for (Objednavka* objednavka : *objednavky_)
+	for (auto objednavka : *objednavky_)
 	{
-
+		if (objednavka->dajDatumDorucenia() + 1 == datum)
+		{
+			zoradenie->push(objednavka->dajPredajnu().dajZona(), objednavka);
+		}
+	}																					   // dorobit vyskladnenie zo skladu
+	while(!zoradenie->isEmpty())
+	{
+		autoPrevoz_->push(zoradenie->pop());
 	}
 	delete zoradenie;
 }
@@ -284,16 +303,4 @@ void Velkosklad::vymazVsetkypolozky(ArrayList<PolozkaOBJ*>* p)
 	{
 		delete poz;
 	}
-}
-
-Velkosklad::~Velkosklad()
-{
-	vymazVsetkyDodavky();
-	delete dodavky_;
-	vymazVsetkoVAute();
-	delete autoPrevoz_;
-	vymazVsetkyObjednavky();
-	delete objednavky_;
-	vymazVsetkypolozky(sklad_);
-	delete sklad_;
 }
