@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Structure">
+      <UniqueIdentifier>{57819021-1a55-40d9-8135-4b9c5e5131ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structure">
+      <UniqueIdentifier>{c39e91b7-9ca6-4384-b42a-40aaab7d84e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Aplikacia">
+      <UniqueIdentifier>{2ec62db1-0170-4b2b-8d99-ca4f15e194a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Aplikacia">
+      <UniqueIdentifier>{8a9ea683-a5e2-4bc0-bff5-0a7a8d0abe73}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dodavatel.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="Dodavka.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="Mineralna_voda.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="Objednavka.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="Predajna.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="Velkosklad.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="Zakaznik.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="Datum.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoPrevoz.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="PolozkaOBJ.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="Array.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayList.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="DSRoutines.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterator.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue_ArrayList.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue_ArrayList_Sorted.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue_Heap.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue_List.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="Structure.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="StructureItem.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Header Files\Structure</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="Predajna.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="Dodavatel.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="Dodavka.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="Mineralna_voda.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="Objednavka.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="Velkosklad.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="Zakaznik.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoPrevoz.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="Datum.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="PolozkaOBJ.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
+    </ClCompile>
+    <ClCompile Include="DSRoutines.cpp">
+      <Filter>Source Files\Structure</Filter>
+    </ClCompile>
+    <ClCompile Include="Structure.cpp">
+      <Filter>Source Files\Structure</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Source Files\Structure</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+﻿  Velkosklad.cpp
+  System.cpp
+  Mineralna_voda.cpp
+  Generating Code...
+c:\users\tomáš\desktop\semus\semus\semestralka_1\linkedlist.h(243): warning C4172: returning address of local variable or temporary: data
+  Skipping... (no relevant changes detected)
+  Main.cpp
+  Semestralka_1.vcxproj -> C:\Users\Tomáš\Desktop\SemUS\SemUS\Debug\Semestralka_1.exe
