@@ -16,13 +16,13 @@ System::System():
 
 System::~System()
 {
-	vymazVsetkychZakaznikov();
+	vymazZoZoznamu<Zakaznik*>(*zakaznici_);
 	delete zakaznici_;
-	vymazVsetkychZakaznikov();
+	vymazZoZoznamu<Predajna*>(*predajne_);
 	delete predajne_;
-	vymazVsetkyMineralky();
+	vymazZoZoznamu<Mineralna_voda*>(*mineralky_);
 	delete mineralky_;
-	vymazVsetkychDodavatelov();
+	vymazZoZoznamu<Dodavatel*>(*dodavatelia_);
 	delete dodavatelia_;
 	delete sklad_;
 }
@@ -75,7 +75,7 @@ bool System::pridanieNovejPredajne(const string& menoZakaznika, const string& ad
 	}
 	Predajna* novaPredajna = new Predajna(menoZakaznika, adresa, zona);
 	predajne_->add(novaPredajna);
-	cout << "$ Pridana predajna na adrese '" << novaPredajna->dajAdresu() << "' zakaznikovi '"
+	cout << "$ Pridana predajna na adrese '" << novaPredajna->dajNazov() << "' zakaznikovi '"
 		<< novaPredajna->dajMenoZakaznika() << "' " << endl;
 	return true;
 }
@@ -233,7 +233,7 @@ Predajna * System::najdiPredajnu(const string & adresa)
 {
 	for (auto predajna : *predajne_)
 	{
-		if (predajna->dajAdresu() == adresa)
+		if (predajna->dajNazov() == adresa)
 		{
 			return predajna;
 		}
@@ -277,44 +277,14 @@ Mineralna_voda * System::najdiMineralnuVodu(const std::string & nazov)
 	return nullptr;	
 }
 
-void System::vymazVsetkypolozky(ArrayList<PolozkaOBJ*>* p)
+template <typename T>
+void System::vymazZoZoznamu(DS::ArrayList<T>& zoznam)
 {
-	for (auto polozka : *p)
+	for (auto prvok : zoznam)
 	{
-		delete polozka;
+		delete prvok;
 	}
-}
-
-void System::vymazVsetkychZakaznikov()
-{
-	for (auto zakaznik : *zakaznici_)
-	{
-		delete zakaznik;
-	}
-}
-
-void System::vymazVsetkyPredajne()
-{
-	for (auto predajna : *predajne_)
-	{
-		delete predajna;
-	}
-}
-
-void System::vymazVsetkyMineralky()
-{
-	for (auto mineralka : *mineralky_)
-	{
-		delete mineralka;
-	}
-}
-
-void System::vymazVsetkychDodavatelov()
-{
-	for (auto dodavatel : *dodavatelia_)
-	{
-		delete dodavatel;
-	}
+	zoznam.clear();
 }
 // KONTROLOVANIE DATUMU
 bool System::kontrolaDatumu(int datumP)

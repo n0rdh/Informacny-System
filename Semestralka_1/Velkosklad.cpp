@@ -17,18 +17,18 @@ Velkosklad::Velkosklad(const Velkosklad & dalsiVelkosklad) :
 	dodavky_(new ArrayList<Dodavka*>(*dalsiVelkosklad.dodavky_)),
 	objednavky_(new ArrayList<Objednavka*>(*dalsiVelkosklad.objednavky_)),
 	autoPrevoz_(new Stack<Objednavka*>(*dalsiVelkosklad.autoPrevoz_))
-{															
+{	
 }
 
 Velkosklad::~Velkosklad()
 {
-	vymazVsetkyDodavky();
+	vymazZoZoznamu<Dodavka*>(*dodavky_);
 	delete dodavky_;
-	vymazVsetkoVAute();
+	vyprazdnitAuto();
 	delete autoPrevoz_;
-	vymazVsetkyObjednavky();
+	vymazZoZoznamu<Objednavka*>(*objednavky_);
 	delete objednavky_;
-	vymazVsetkypolozky(sklad_);
+	vymazZoZoznamu<PolozkaOBJ*>(*sklad_);
 	delete sklad_;
 }
 
@@ -174,8 +174,8 @@ void Velkosklad::kontrolaPoziadaviek()
 	{
 		cout << "        - " << vyp << endl;
 	}
-	vymazVsetkypolozky(pozadovanePolozky);
-	vymazVsetkypolozky(polozkyVsklade);
+	vymazZoZoznamu<PolozkaOBJ*>(*pozadovanePolozky);
+	vymazZoZoznamu<PolozkaOBJ*>(*polozkyVsklade);
 	delete vypisZoradenie;
 	delete pozadovanePolozky;
 	delete polozkyVsklade;
@@ -273,7 +273,7 @@ void Velkosklad::zoradPole(DS::ArrayList<string>& pole)
 	}
 }
 
-void Velkosklad::vymazVsetkoVAute()
+void Velkosklad::vyprazdnitAuto()
 {
 	while (!autoPrevoz_->isEmpty())
 	{
@@ -281,26 +281,12 @@ void Velkosklad::vymazVsetkoVAute()
 	}
 }
 
-void Velkosklad::vymazVsetkyObjednavky()
+template <typename T>			  
+void Velkosklad::vymazZoZoznamu(DS::ArrayList<T>& zoznam)
 {
-	for (auto poz : *objednavky_)
+	for (auto prvok : zoznam)
 	{
-		delete poz;
+		delete prvok;
 	}
-}
-
-void Velkosklad::vymazVsetkyDodavky()
-{
-	for (auto poz : *dodavky_)
-	{
-		delete poz;
-	}
-}
-
-void Velkosklad::vymazVsetkypolozky(ArrayList<PolozkaOBJ*>* p)
-{
-	for (auto poz : *p)
-	{
-		delete poz;
-	}
+	zoznam.clear();
 }

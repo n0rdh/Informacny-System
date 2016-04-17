@@ -14,7 +14,7 @@ public:
 
 	~Dodavatel();
 
-private:													  // kontroluj poradie ty KOKOT!!!!!!!!!!!!!!! 
+private:												
 	std::string* nazov_;
 	std::string* adresa_;
 };

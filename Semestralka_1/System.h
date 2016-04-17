@@ -41,12 +41,8 @@ public:
 	void nacitatZoSuboru(const std::string& subor);
 
 	bool kontrolaDatumu(int datum);
-	void vymazVsetkypolozky(DS::ArrayList<PolozkaOBJ*>* p);
-	void vymazVsetkychZakaznikov();
-	void vymazVsetkychZakaznikov();
-	void vymazVsetkyPredajne();
-	void vymazVsetkyMineralky();
-	void vymazVsetkychDodavatelov();
+	template <typename T>
+	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
 
 	void zoradPole(DS::ArrayList<std::string>& pole);
 

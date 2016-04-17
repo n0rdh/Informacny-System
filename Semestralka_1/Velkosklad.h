@@ -26,13 +26,12 @@ public:
 	void kontrolaPoziadaviek();
 	void zoradDodavkyDodavky();
 	
-
-	void vymazVsetkoVAute();
-	void vymazVsetkyObjednavky();
-	void vymazVsetkyDodavky();
-	void vymazVsetkypolozky(DS::ArrayList<PolozkaOBJ*>* p);
+	void vyprazdnitAuto();
 	void zoradPole(DS::ArrayList<std::string>& pole);
-						  
+	template <typename T>
+	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
+
+
 	~Velkosklad();
 
 private:

@@ -50,6 +50,7 @@ int main()
 	cout << endl;
 	cout << endl;
 	sys->kontrolaPoziadaviekZ();
+	sys->vypisSkladu();
 	sys->vyhladanieDodavatela(20160613, 20161013);
 	cout << endl;
 	cout << endl;

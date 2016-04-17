@@ -11,7 +11,7 @@ public:
 	bool operator==(const Predajna& predajnaD) const;
 	
 	int dajZona() const;
-	std::string& dajAdresu() const;
+	std::string& dajNazov() const;
 	std::string& dajMenoZakaznika() const;
 
 	~Predajna();
