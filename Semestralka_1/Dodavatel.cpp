@@ -14,6 +14,8 @@ Dodavatel::Dodavatel(const Dodavatel & dalsiDodavatel)
 
 Dodavatel::~Dodavatel()
 {
+
+	cout << "############################################  Destruktor Dodavatela    ###" << endl;
 	delete nazov_;
 	delete adresa_;
 }

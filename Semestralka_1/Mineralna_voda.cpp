@@ -49,6 +49,8 @@ Dodavatel * Mineralna_voda::dajDodavatela() const
 
 Mineralna_voda::~Mineralna_voda()
 {
+
+	cout << "###################################################  Destruktor Minreralky     ###" << endl;
 	delete nazov_;
 	delete ean_;
 }

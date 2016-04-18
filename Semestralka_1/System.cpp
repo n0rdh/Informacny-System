@@ -73,10 +73,10 @@ bool System::pridanieNovejPredajne(const string& menoZakaznika, const string& ad
 		cout << "~ Predajna na tejto adrese uz existuje!!" << endl;
 		return false;
 	}
-	Predajna* novaPredajna = new Predajna(menoZakaznika, adresa, zona);
+	Predajna* novaPredajna = new Predajna(predaj->dajZakaznika(), adresa, zona);
 	predajne_->add(novaPredajna);
 	cout << "$ Pridana predajna na adrese '" << novaPredajna->dajNazov() << "' zakaznikovi '"
-		<< novaPredajna->dajMenoZakaznika() << "' " << endl;
+		<< novaPredajna->dajZakaznika()->dajNazov() << "' " << endl;
 	return true;
 }
 // PRIDANIE NOVEHO TYPU MINERALNEJ VODY 
@@ -133,11 +133,13 @@ bool System::zaevidovanieObjednavky(const string& adresaPredajna, int datumDoruc
 	{
 		return false;
 	}
+	/*
 	if (aktualDatum_ + 2 >= datumDorucenia)
 	{
 		cerr << "~ Neobjednam koli datumu..." << endl;
 		return false;
 	}
+	*/
 	Mineralna_voda* voda = najdiMineralnuVodu(typMinVody);
 	if (voda == nullptr)
 	{
@@ -167,10 +169,15 @@ void System::vyhladanieDodavatela(int odkedy, int dokedy) const
 {
 	sklad_->vyhladanieDodavatela(odkedy,dokedy);
 }
-// VYHLADANIE NAJ ODBERATELA
-void System::vyhladanieOdberatela(int odkedy, int dokedy) const  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// VYHLADANIE NAJ ODBERATELA	    
+void System::vyhladanieOdberatelaTypuMinVody(string & voda, int odkedy, int dokedy) const  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 {
+	
+}
 
+void System::vyhladanieOdberatelaOdDodavatela(string & dodavatel, int odkedy, int dokedy) const
+{
+	
 }
 // VYPISANIE SKLADU
 void System::vypisSkladu()
@@ -202,7 +209,13 @@ void System::odovzdanieZakaznikovi()
 // VYSKLADNENIE
 void System::vyskladnenie()
 {
+	sklad_->vypisSklad();
+	cout << endl;
+	cout << endl;
 	sklad_->vyskladnenie(aktualDatum_);
+	cout << endl;
+	cout << endl;
+	sklad_->vypisSklad();
 }
 //___________________________________________________________________________POMOCNE FUNKCIE
 void System::nastavDatum()

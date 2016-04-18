@@ -3,18 +3,18 @@
 
 using namespace std;
 
-PolozkaOBJ::PolozkaOBJ(const Mineralna_voda & mineralka, int mnozstvo) :
+Polozka::Polozka(const Mineralna_voda & mineralka, int mnozstvo) :
 	mineralka_(&mineralka), mnozstvo_(mnozstvo)
 {
 }
 
-PolozkaOBJ::PolozkaOBJ(const PolozkaOBJ& dalsiaPolozka) :
+Polozka::Polozka(const Polozka& dalsiaPolozka) :
 	mineralka_(dalsiaPolozka.mineralka_),
 	mnozstvo_(dalsiaPolozka.mnozstvo_)
 {
 }
 
-PolozkaOBJ & PolozkaOBJ::operator=(const PolozkaOBJ& dalsiaPolozka)
+Polozka & Polozka::operator=(const Polozka& dalsiaPolozka)
 {
 	if (this != &dalsiaPolozka) {
 		mineralka_ = dalsiaPolozka.mineralka_;
@@ -23,27 +23,27 @@ PolozkaOBJ & PolozkaOBJ::operator=(const PolozkaOBJ& dalsiaPolozka)
 	return *this;
 }
 
-int PolozkaOBJ::dajMnozstvo()
+int Polozka::dajMnozstvo()
 {
 	return mnozstvo_;
 }
 
-const Mineralna_voda & PolozkaOBJ::dajMineralku() const
+const Mineralna_voda & Polozka::dajMineralku() const
 {
 	return *mineralka_;
 }
 
-void PolozkaOBJ::zvysMnozstvo(int kolko)
+void Polozka::zvysMnozstvo(int kolko)
 {
 	mnozstvo_ += kolko;
 }
 
-void PolozkaOBJ::znizMnozstvo(int kolko)
+void Polozka::znizMnozstvo(int kolko)
 {
 	mnozstvo_ -= kolko;
 }
 
-string PolozkaOBJ::dajVypisPolozky()
+string Polozka::dajVypisPolozky()
 {
 	string pom;
 	pom.append(mineralka_->dajNazov());
@@ -52,6 +52,8 @@ string PolozkaOBJ::dajVypisPolozky()
 	return pom;
 }
 
-PolozkaOBJ::~PolozkaOBJ()
+Polozka::~Polozka()
 {
+
+	cout << "###################################################  Destruktor Polozka		###" << endl;
 }

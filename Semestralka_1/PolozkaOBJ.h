@@ -2,13 +2,13 @@
 #include "Mineralna_voda.h"
 #include <iostream>
 
-class PolozkaOBJ
+class Polozka
 {
 public:
-	PolozkaOBJ(const Mineralna_voda & mineralka, int mnozstvo);
-	PolozkaOBJ(const PolozkaOBJ& dalsiaPolozka);
+	Polozka(const Mineralna_voda & mineralka, int mnozstvo);
+	Polozka(const Polozka& dalsiaPolozka);
 
-	PolozkaOBJ & operator=(const PolozkaOBJ& dalsiaPolozka);
+	Polozka & operator=(const Polozka& dalsiaPolozka);
 
 	int dajMnozstvo();
 	const Mineralna_voda & dajMineralku() const;
@@ -16,7 +16,7 @@ public:
 	void zvysMnozstvo(int kolko);
 	void znizMnozstvo(int kolko);
 
-	~PolozkaOBJ();
+	~Polozka();
 
 private:
 	const Mineralna_voda * mineralka_;

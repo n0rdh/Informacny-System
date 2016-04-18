@@ -5,7 +5,7 @@ using namespace DS;
 Objednavka::Objednavka(const Predajna & predajna, int datum) :
 	predajna_(&predajna),
 	datum_(new Datum(datum)),
-	polozky_(new ArrayList<PolozkaOBJ*>())
+	polozky_(new ArrayList<Polozka*>())
 {
 	odoslanie_ = false;
 	stavObjednavky_ = soCAKAJUCA;
@@ -14,7 +14,7 @@ Objednavka::Objednavka(const Predajna & predajna, int datum) :
 Objednavka::Objednavka(const Objednavka & objednakaD) :
 	predajna_(objednakaD.predajna_),
 	datum_(new Datum(*objednakaD.datum_)),
-	polozky_(new ArrayList<PolozkaOBJ*>(*objednakaD.polozky_))
+	polozky_(new ArrayList<Polozka*>(*objednakaD.polozky_))
 {
 }
 
@@ -75,10 +75,10 @@ string Objednavka::vypisObjednavku() const
 
 void Objednavka::pridajPolozku(Mineralna_voda & typVody, int mnozstvo)
 {
-	polozky_->add(new PolozkaOBJ(typVody,mnozstvo));
+	polozky_->add(new Polozka(typVody,mnozstvo));
 }
 
-ArrayList<PolozkaOBJ*>* Objednavka::dajPolozky()
+ArrayList<Polozka*>* Objednavka::dajPolozky()
 {
 	return polozky_;
 }
@@ -152,6 +152,8 @@ bool Objednavka::oznacOdoslanu()
 
 Objednavka::~Objednavka()
 {
+
+	cout << "###################################################  Destruktor Objednavka    ###" << endl;
 	for (auto polozka : *polozky_)
 	{
 		delete &polozka;

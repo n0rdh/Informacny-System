@@ -25,7 +25,7 @@ public:
 	int dajDatumDorucenia() const;
 	std::string vypisObjednavku() const;	
 	void pridajPolozku(Mineralna_voda& typVody, int mnozstvo);
-	DS::ArrayList<PolozkaOBJ*>* dajPolozky();
+	DS::ArrayList<Polozka*>* dajPolozky();
 
 	bool jeNeplatna() const;
 	bool jeCakajuca() const;
@@ -38,7 +38,7 @@ public:
 
 private:
 
-	DS::ArrayList<PolozkaOBJ*>* polozky_;
+	DS::ArrayList<Polozka*>* polozky_;
 	const Predajna * predajna_;
 	StavObjednavky stavObjednavky_;
 	Datum* datum_;

@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Zakaznik.h"
 #include "PolozkaOBJ.h"
 #include "LinkedList.h"
 #include "Stack.h"
@@ -18,6 +19,8 @@ public:
 
 	void vyskladnenie(int datum);
 	void vyhladanieDodavatela(int odkedy, int dokedy);
+	void vyhladanieOdberatelaVody(std::string & voda, int odkedy, int dokedy);
+	void vyhladanieOdberatelaOdDodavatela(std::string & dodvatel, int odkedy, int dokedy);
 	void odovzdajZakanikovy();
 	void vypisNeplatneObjednavky();		
 	void vypisVsetkyObjednavky();
@@ -25,6 +28,7 @@ public:
 	void vypisVsetkyDodavky();
 	void kontrolaPoziadaviek();
 	void zoradDodavky();
+	void zaskladni();
 	
 	void vyprazdnitAuto();
 	void zoradPole(DS::ArrayList<std::string>& pole);
@@ -35,7 +39,7 @@ public:
 	~Velkosklad();
 
 private:
-	DS::ArrayList<PolozkaOBJ*>* sklad_;
+	DS::ArrayList<Polozka*>* sklad_;
 	DS::Stack<Objednavka*>* autoPrevoz_;
 	DS::ArrayList<Dodavka*>* dodavky_;
 	DS::ArrayList<Objednavka*>* objednavky_;

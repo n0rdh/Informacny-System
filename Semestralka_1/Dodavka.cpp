@@ -18,6 +18,7 @@ Dodavka::Dodavka(const Dodavka & dalsiaDodavka) :
 
 Dodavka::~Dodavka()
 {
+	cout << "############################################## Destruktor dodavka #######################################" << endl;
 }
 
 Dodavka & Dodavka::operator=(const Dodavka & dalsiaDodavka)

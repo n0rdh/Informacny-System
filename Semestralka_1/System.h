@@ -36,7 +36,8 @@ public:
 	void vyhladanieDodavatela(int odkedy, int dokedy) const;
 	void vypisSkladu(); 
 	void vypisanieVsetkychPoziadaviekNeplat();
-	void vyhladanieOdberatela(int odkedy, int dokedy) const;
+	void vyhladanieOdberatelaTypuMinVody(string & voda,int odkedy, int dokedy) const;
+	void vyhladanieOdberatelaOdDodavatela(string & dodavatel, int odkedy, int dokedy) const;
 	void ulozitDoSuboru(const std::string& subor);
 	void nacitatZoSuboru(const std::string& subor);
 
@@ -56,8 +57,7 @@ public:
 
 	~System();
 
-private:
-	;
+private:	  
 	int aktualDatum_;
 	Velkosklad* sklad_;
 	DS::ArrayList<Zakaznik*>* zakaznici_;

@@ -1,10 +1,11 @@
 #pragma once
+#include "Zakaznik.h"
 #include <iostream>
 
 class Predajna
 {
 public:
-	Predajna(const std::string& menoZakaznika, const std::string& pAdresa, const  int pZona);
+	Predajna(Zakaznik * zakaznik, const std::string& pAdresa, const  int pZona);
 	Predajna(const Predajna& predajnaD);
 
 	Predajna& operator=(const Predajna& dalsiaPredajna);
@@ -12,11 +13,12 @@ public:
 	
 	int dajZona() const;
 	std::string& dajNazov() const;
-	std::string& dajMenoZakaznika() const;
+	Zakaznik * dajZakaznika() const;
 
 	~Predajna();
 private:
+	;
 	int zona_;
-	std::string* adresa_; 
-	std::string* menoZakaznika_;
+	std::string * adresa_; 
+	Zakaznik * zakaznik_;
 };

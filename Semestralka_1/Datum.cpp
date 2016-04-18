@@ -29,6 +29,12 @@ Datum::Datum() {
 	rok_ = 1900 + timePtr->tm_year;
 }
 
+Datum::~Datum()
+{
+	cout << "##############################################  Destruktor Datumu    ###" << endl;
+}
+
+
 int Datum::aktualnyDatum()
 {
 	time_t t = time(NULL);
@@ -78,8 +84,4 @@ bool Datum::kontrolaDatumu()
 int Datum::celeCislo() const
 {
 	return rok_ * 10000 + mesiac_ * 100 + den_;
-}
-
-Datum::~Datum()
-{
 }

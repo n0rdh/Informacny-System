@@ -40,6 +40,8 @@ string& Zakaznik::dajAdresu() const
 
 Zakaznik::~Zakaznik()
 {
+
+	cout << "###################################################  Destruktor Zakaznik    ###" << endl;
 	delete nazov_;
 	delete adresa_;
 }

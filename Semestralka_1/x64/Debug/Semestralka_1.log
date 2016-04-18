@@ -1,2 +1,50 @@
-﻿  Main.cpp
-  Semestralka_1.vcxproj -> C:\Users\Tomáš\Desktop\School\GitHub\Informacny-system\x64\Debug\Informacny_system.exe
+﻿  Zakaznik.cpp
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(8): error C2061: syntax error: identifier 'Zakaznik'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2143: syntax error: missing ';' before '*'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2238: unexpected token(s) preceding ';'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2143: syntax error: missing ';' before '*'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2238: unexpected token(s) preceding ';'
+  Velkosklad.cpp
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(8): error C2061: syntax error: identifier 'Zakaznik'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2143: syntax error: missing ';' before '*'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2238: unexpected token(s) preceding ';'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2143: syntax error: missing ';' before '*'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2238: unexpected token(s) preceding ';'
+  System.cpp
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(8): error C2061: syntax error: identifier 'Zakaznik'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2143: syntax error: missing ';' before '*'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2238: unexpected token(s) preceding ';'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2143: syntax error: missing ';' before '*'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2238: unexpected token(s) preceding ';'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(39): error C2061: syntax error: identifier 'string'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(40): error C2061: syntax error: identifier 'string'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(76): error C2039: 'dajZakaznika': is not a member of 'Predajna'
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(6): note: see declaration of 'Predajna'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(76): error C2661: 'Predajna::Predajna': no overloaded function takes 2 arguments
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(79): error C2039: 'dajZakaznika': is not a member of 'Predajna'
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(6): note: see declaration of 'Predajna'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(79): error C2227: left of '->dajNazov' must point to class/struct/union/generic type
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(174): error C2511: 'void System::vyhladanieOdberatelaTypuMinVody(std::string &,int,int) const': overloaded member function not found in 'System'
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(13): note: see declaration of 'System'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(179): error C2511: 'void System::vyhladanieOdberatelaOdDodavatela(std::string &,int,int) const': overloaded member function not found in 'System'
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(13): note: see declaration of 'System'
+  Predajna.cpp
+  Main.cpp
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(8): error C2061: syntax error: identifier 'Zakaznik'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2143: syntax error: missing ';' before '*'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2238: unexpected token(s) preceding ';'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2143: syntax error: missing ';' before '*'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2238: unexpected token(s) preceding ';'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(39): error C2061: syntax error: identifier 'string'
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(40): error C2061: syntax error: identifier 'string'
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Objednavka.cpp
