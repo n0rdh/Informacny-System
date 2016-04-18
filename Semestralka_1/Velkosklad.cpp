@@ -93,16 +93,21 @@ void Velkosklad::vyhladanieDodavatela(int odkedy, int dokedy)
 		
 		for (auto polozka : *objednavka->dajPolozky())
 		{
-			Dodavatel* dodPom = &polozka->dajMineralku().dajDodavatela();
+			Dodavatel* dodPom = polozka->dajMineralku().dajDodavatela();
 			if (zoznam.count(dodPom) == 0)
 			{
-				zoznam[&polozka->dajMineralku().dajDodavatela()] = polozka->dajMnozstvo();
+				zoznam[polozka->dajMineralku().dajDodavatela()] = polozka->dajMnozstvo();
 			}
 			else
 			{
-				zoznam[&polozka->dajMineralku().dajDodavatela()] += polozka->dajMnozstvo();
+				zoznam[polozka->dajMineralku().dajDodavatela()] += polozka->dajMnozstvo();
 			}
 		}
+	}
+	if (zoznam.size() == 0)
+	{
+		cout << "Nenasiel som dodavatela" << endl;
+		return;
 	}
 	Dodavatel* maxDodavatel = NULL;
 	int maxMnozstvo = 0;
@@ -183,16 +188,15 @@ void Velkosklad::kontrolaPoziadaviek()
 
 void Velkosklad::vypisVsetkyDodavky()
 {
-	//zoradDodavkyDodavky();
+	zoradDodavky();
 	for (auto dodavka : *dodavky_)
 	{
 		cout << dodavka->toString() << endl;
 	}
 }
 
-void Velkosklad::zoradDodavkyDodavky()
+void Velkosklad::zoradDodavky()
 {
-
 	PriorityQueue_Heap<Dodavka*>*  zoradenie = new PriorityQueue_Heap<Dodavka*>();
 	for (auto dodavka : *dodavky_)
 	{
@@ -200,11 +204,14 @@ void Velkosklad::zoradDodavkyDodavky()
 		zoradenie->push(nova->dajDatumPlnenia(), nova);
 		delete dodavka;
 	}
+	dodavky_->clear();
 	while (!zoradenie->isEmpty())
 	{
 		dodavky_->add(zoradenie->pop());
 	}
+							   
 	delete zoradenie;
+	
 }
 
 void Velkosklad::vypisNeplatneObjednavky()

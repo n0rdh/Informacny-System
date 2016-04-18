@@ -34,29 +34,37 @@ int main()
 	sys->pridanieNovehoTypuMVody(budiska, ean2, nazovDod2);
 	sys->pridanieNovehoTypuMVody(bublinky, ean1, nazovDod);
 	cout << endl;
+	sys->zaevidovanieNovejDodavky(bublinky, 175456, 20160701);
 	sys->zaevidovanieNovejDodavky(budiska, 4774899, 20160413);
-	sys->zaevidovanieNovejDodavky(rajecVoda, 9564, 20160101);
-	sys->zaevidovanieNovejDodavky(cocacola, 97546, 20160101);
-	sys->zaevidovanieNovejDodavky(bublinky, 175456, 20160101);
-	sys->zaevidovanieNovejDodavky(budiska, 77489, 20160101);
+	sys->zaevidovanieNovejDodavky(rajecVoda, 9564, 20160803);
+	sys->zaevidovanieNovejDodavky(cocacola, 97546, 20161121);
+	sys->zaevidovanieNovejDodavky(budiska, 77489, 20150112);
 	sys->zaevidovanieNovejDodavky(cocacola, 5646646, 20160101);
 	cout << endl;
-	sys->zaevidovanieObjednavky(adresaPredajne, 20160613, cocacola, 188);
-	sys->zaevidovanieObjednavky(adresaPredajne, 20160913, rajecVoda, 6821);
-	sys->zaevidovanieObjednavky(adresaPredajne, 20161013, bublinky, 3316);
+
+	sys->zaevidovanieObjednavky(adresaPredajne, 20160613, cocacola, 18800000);
+	sys->zaevidovanieObjednavky(adresaPredajne, 20161013, bublinky, 3);
+	sys->zaevidovanieObjednavky(adresaPredajne, 20160613, cocacola, 18);
+	sys->zaevidovanieObjednavky(adresaPredajne, 20160913, rajecVoda, 61);
+	sys->zaevidovanieObjednavky(adresaPredajne, 20161013, bublinky, 3);
 	sys->zaevidovanieObjednavky(adresaPredajne, 20160813, cocacola, 10);
+	//sys->vyhladanieDodavatela(20170613, 20161013);
 	//adresaPredajna,typMinVody, mnozstvo, datumDorucenia
 	//sys->vypisanieVsetkychPoziadaviekNeplat();
 	cout << endl;
 	cout << endl;
 	sys->kontrolaPoziadaviekZ();
 	sys->vypisSkladu();
-	sys->vyhladanieDodavatela(20160613, 20161013);
+	//sys->vyhladanieDodavatela(20160613, 20161013);
 	cout << endl;
 	cout << endl;
-	sys->vypisSkladu();
 	cout << endl;
 	cout << endl;
-	//sys->vyhladanieDodavatela(20161010, 20171213);
+	//sys->vypisanieVsetkychPoziadaviekNeplat();
+	cout << endl;
+	cout << endl;
+	//sys->vypisDodavky();
+	cout << endl;
+	cout << endl;
 	return 0;
 }  

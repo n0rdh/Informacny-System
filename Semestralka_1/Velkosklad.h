@@ -24,7 +24,7 @@ public:
 	void vypisSklad();
 	void vypisVsetkyDodavky();
 	void kontrolaPoziadaviek();
-	void zoradDodavkyDodavky();
+	void zoradDodavky();
 	
 	void vyprazdnitAuto();
 	void zoradPole(DS::ArrayList<std::string>& pole);

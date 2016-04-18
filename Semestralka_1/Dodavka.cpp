@@ -3,7 +3,7 @@
 using namespace std;
 
 Dodavka::Dodavka(const Mineralna_voda& mineralka, unsigned int mnozstvo, int datum) :
-	mineralka_(&mineralka),
+	mineralka_(mineralka),
 	datumPlnenia_(datum),
 	mnozstvo_(mnozstvo)
 {
@@ -13,6 +13,10 @@ Dodavka::Dodavka(const Dodavka & dalsiaDodavka) :
 	mineralka_(dalsiaDodavka.mineralka_),
 	datumPlnenia_(dalsiaDodavka.datumPlnenia_),
 	mnozstvo_(dalsiaDodavka.mnozstvo_)
+{
+}
+
+Dodavka::~Dodavka()
 {
 }
 
@@ -29,7 +33,7 @@ Dodavka & Dodavka::operator=(const Dodavka & dalsiaDodavka)
 string Dodavka::toString() const
 {
 	string pom = "";
-	pom.append(mineralka_->dajNazov());
+	pom.append(mineralka_.dajNazov());
 	pom.append(" - ");
 	pom.append(to_string(mnozstvo_));
 	pom.append(" - ");
@@ -37,9 +41,9 @@ string Dodavka::toString() const
 	return pom;
 }
 
-const Mineralna_voda & Dodavka::dajMinetralku() const
+const Mineralna_voda & Dodavka::dajMinetralku()
 {
-	return *mineralka_;
+	return mineralka_;
 }
 
 int Dodavka::dajDatumPlnenia() const
@@ -57,6 +61,3 @@ void Dodavka::znizMnozstvo(int kolko)
 	mnozstvo_ -= kolko;
 }
 
-Dodavka::~Dodavka()
-{
-}

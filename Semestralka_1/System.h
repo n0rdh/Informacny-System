@@ -43,6 +43,7 @@ public:
 	bool kontrolaDatumu(int datum);
 	template <typename T>
 	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
+	void vypisDodavky();
 
 	void zoradPole(DS::ArrayList<std::string>& pole);
 

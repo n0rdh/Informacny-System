@@ -12,13 +12,13 @@ public:
 	int dajDatumPlnenia() const; 
 	int dajMnozstvo() const;
 	void znizMnozstvo(int kolko);
-	const Mineralna_voda & dajMinetralku() const;
+	const Mineralna_voda & dajMinetralku();
 	std::string toString() const;
 
 	~Dodavka();
 
 private:
-	const Mineralna_voda * mineralka_;
+	Mineralna_voda mineralka_;
 	unsigned int mnozstvo_;
 	int datumPlnenia_;
 

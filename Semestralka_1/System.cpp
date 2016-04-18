@@ -109,6 +109,7 @@ bool System::zaevidovanieNovejDodavky(const string& nazov, unsigned int mnozstvo
 {
 	if (kontrolaDatumu(datumPlnenia))
 	{
+		cout << "~ Neplatny datum " << endl;
 		return false;
 	}
 
@@ -302,4 +303,9 @@ bool System::kontrolaDatumu(int datumP)
 	}
 	delete datum;
 	return false;
+}
+
+void System::vypisDodavky()
+{
+	sklad_->vypisVsetkyDodavky();
 }

@@ -22,6 +22,7 @@ Mineralna_voda & Mineralna_voda::operator=(const Mineralna_voda & dalsiaMineralk
 		delete ean_;
 		nazov_ = new string(*dalsiaMineralka.nazov_);
 		ean_ = new string(*dalsiaMineralka.ean_);
+		dodavatel_ = dalsiaMineralka.dodavatel_;
 	}
 	return *this;
 }
@@ -41,9 +42,9 @@ string & Mineralna_voda::dajEAN() const
 	return *ean_;
 }
 
-Dodavatel & Mineralna_voda::dajDodavatela() const
+Dodavatel * Mineralna_voda::dajDodavatela() const
 {
-	return *dodavatel_;
+	return dodavatel_;
 }
 
 Mineralna_voda::~Mineralna_voda()

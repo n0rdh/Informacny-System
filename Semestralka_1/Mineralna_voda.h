@@ -14,7 +14,7 @@ public:
 	std::string& dajNazov() const;
 	std::string& dajNazovDodavatela() const;
 	std::string& dajEAN() const;
-	Dodavatel& dajDodavatela() const;
+	Dodavatel * dajDodavatela() const;
 
 	~Mineralna_voda();
 private:
