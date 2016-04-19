@@ -84,7 +84,7 @@ void Objednavka::pridajPolozku(Mineralna_voda & typVody, int mnozstvo)
 	polozky_->add(new Polozka(typVody,mnozstvo));
 }
 
-ArrayList<Polozka*>* Objednavka::dajPolozky()
+const ArrayList<Polozka*>* Objednavka::dajPolozky()
 {
 	return polozky_;
 }
@@ -168,11 +168,13 @@ bool Objednavka::oznacVyexpedovanu()
 
 Objednavka::~Objednavka()
 {
-
-	cout << "###################################################  Destruktor Objednavka    ###" << endl;
 	for (auto polozka : *polozky_)
 	{
 		delete &polozka;
 	}
 	delete polozky_;
+}
+string Objednavka::dajPrikazNaUlozenie() const
+{
+	return "objednavka pridaj " ;
 }

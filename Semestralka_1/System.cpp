@@ -1,14 +1,41 @@
 #include "System.h"
 #include "PriorityQueue_Heap.h"
+#include <algorithm>
+#include <iostream>
+#include <string>
 
 using namespace DS;
 using namespace std;
 
+static bool porovnajDodavatelov(Dodavatel*& a, Dodavatel*& b)
+{
+	return *a == *b;
+}
+
+static bool porovnajPredajne(Predajna*& a, Predajna*& b)
+{
+	return *a == *b;
+}
+
+static bool porovnajMineralneVody(Mineralna_voda*& a, Mineralna_voda*& b)
+{
+	return *a == *b;
+}
+
+static bool porovnajZakaznikov(Zakaznik*& a, Zakaznik*& b)
+{
+	return *a == *b;
+}
+
 System::System():
-	zakaznici_(new ArrayList<Zakaznik*>()),
-    predajne_(new ArrayList<Predajna*>()),
-	mineralky_(new ArrayList<Mineralna_voda*>()),
-	dodavatelia_(new ArrayList<Dodavatel*>()),
+	zakaznici_(new ArrayList<Zakaznik*>(10,
+		reinterpret_cast<EqualityFunction<Zakaznik*>>(porovnajZakaznikov))),
+    predajne_(new ArrayList<Predajna*>(10,
+		reinterpret_cast<EqualityFunction<Predajna*>>(porovnajZakaznikov))),
+	mineralky_(new ArrayList<Mineralna_voda*>(10,
+		reinterpret_cast<EqualityFunction<Mineralna_voda*>>(porovnajZakaznikov))),
+	dodavatelia_(new ArrayList<Dodavatel*>(10,
+		reinterpret_cast<EqualityFunction<Dodavatel*>>(porovnajZakaznikov))),
 	sklad_(new Velkosklad())
 {
 	nastavDatum();
@@ -27,13 +54,14 @@ System::~System()
 	delete sklad_;
 }
 
-System& System::getInstancia()
+System& System::dajInstanciu()
 {
 	static System instancia;
 	return instancia;
 }
 //  PRIDANIE DODAVATELA
-bool System::pridanieNovehoDodavatela(const string& nazov, const string& adresa)
+bool System::pridanieNovehoDodavatela(const string& nazov, 
+									  const string& adresa)
 {
 	if (najdiDodavatela(nazov) != nullptr)
 	{
@@ -46,7 +74,8 @@ bool System::pridanieNovehoDodavatela(const string& nazov, const string& adresa)
 	return true;						  
 }
 // PRIDANIE ZAKAZNIKA
-bool System::pridanieNovehoZakaznika(const string& meno, const string& adresa)
+bool System::pridanieNovehoZakaznika(const string& meno,
+									 const string& adresa)
 {
 	Zakaznik* zak = najdiZakaznika(meno);
 	if (zak != nullptr)
@@ -59,8 +88,11 @@ bool System::pridanieNovehoZakaznika(const string& meno, const string& adresa)
 	return true;
 }
 // PRIDANIE PREDAJNE
-bool System::pridanieNovejPredajne(const string& menoZakaznika, const string& adresa, const int zona)
+bool System::pridanieNovejPredajne(const string& menoZakaznika,
+								   const string& adresa,
+								   const string& zonaS)
 {
+	int zona = prevedNaInt(zonaS);
 	Zakaznik* zak = najdiZakaznika(menoZakaznika);
 	if (zak == nullptr)
 	{
@@ -81,7 +113,9 @@ bool System::pridanieNovejPredajne(const string& menoZakaznika, const string& ad
 	return true;
 }
 // PRIDANIE NOVEHO TYPU MINERALNEJ VODY 
-bool System::pridanieNovehoTypuMVody(const string& nazov, const string& ean, const string& nazovDodavatela)
+bool System::pridanieNovehoTypuMVody(const string& nazov,
+									 const string& ean,
+									 const string& nazovDodavatela)
 {
 	if (!kontrolaEAN(ean)) return false;
 	Dodavatel* dodavatel = najdiDodavatela(nazovDodavatela);
@@ -103,8 +137,12 @@ bool System::pridanieNovehoTypuMVody(const string& nazov, const string& ean, con
 	return true;
 }
 // ZAEVIDOVANIE DODAVKY
-bool System::zaevidovanieNovejDodavky(const string& ean, unsigned int mnozstvo, int datumPlnenia) 
+bool System::zaevidovanieNovejDodavky(const string& ean,
+									  const string& mnozstvoS,
+									  const string& datumPlneniaS)
 {
+	int mnozstvo = prevedNaInt(mnozstvoS);
+	int datumPlnenia = prevedNaInt(datumPlneniaS);
 	if (!kontrolaEAN(ean)) return false;
 	if (kontrolaDatumu(datumPlnenia))
 	{
@@ -124,9 +162,14 @@ bool System::zaevidovanieNovejDodavky(const string& ean, unsigned int mnozstvo, 
 	return true; 		
 } 
 // ZAEVIDOVANIE OBJEDNAVKY
-bool System::zaevidovanieObjednavky(const string& adresaPredajna, int datumDorucenia,
-									const string& ean, unsigned int mnozstvo)
+bool System::zaevidovanieObjednavky(const string& adresaPredajna,
+									const string& datumDoruceniaS,
+									const string& ean,
+									const string& mnozstvoS,
+									const string& polozky)
 {
+	int mnozstvo = prevedNaInt(mnozstvoS);
+	int datumDorucenia = prevedNaInt(datumDoruceniaS);
 	if (!kontrolaEAN(ean)) return false;
 	int i = 0;
 	if (kontrolaDatumu(datumDorucenia))
@@ -166,20 +209,31 @@ void System::kontrolaPoziadaviekZ()
 	sklad_->kontrolaPoziadaviek();
 }
 // VYHLADANIE NAJPOZADOVANEJSIEHO DODAVATELA														  
-void System::vyhladanieDodavatela(int odkedy, int dokedy) const
+void System::vyhladanieDodavatela(const string & odkedyS,
+								  const string & dokedyS)
 {
+	int odkedy = prevedNaInt(odkedyS);
+	int dokedy = prevedNaInt(dokedyS);
 	cout << endl;
 	sklad_->vyhladanieDodavatela(odkedy,dokedy);
 }
 // VYHLADANIE NAJ ODBERATELA	    
-void System::vyhladanieOdberatelaTypuMinVody(string & ean, int odkedy, int dokedy) const  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+void System::vyhladanieOdberatelaTypuMinVody(const string & ean,
+											 const string & odkedyS,
+											 const string & dokedyS)
 {
+	int odkedy = prevedNaInt(odkedyS);
+	int dokedy = prevedNaInt(dokedyS);
 	cout << endl;
 	sklad_->vyhladanieOdberatelaVody(ean, odkedy, dokedy);
 }
 
-void System::vyhladanieOdberatelaOdDodavatela(string & dodavatel, int odkedy, int dokedy) const
+void System::vyhladanieOdberatelaOdDodavatela(const string & dodavatel,
+											  const string & odkedyS,
+											  const string & dokedyS)
 {
+	int odkedy = prevedNaInt(odkedyS);
+	int dokedy = prevedNaInt(dokedyS);
 	cout << endl;
 	sklad_->vyhladanieOdberatelaOdDodavatela(dodavatel, odkedy, dokedy);
 }
@@ -196,12 +250,32 @@ void System::vypisanieVsetkychPoziadaviekNeplat()
 	sklad_->vypisNeplatneObjednavky();
 }
 // ULOZENIE DO SUBORU
-void System::ulozitDoSuboru(const string& subor)	   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+void System::ulozitDoSuboru(ostream& subor)	   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 {
+	for (auto zakaznik : *zakaznici_)
+	{
+		subor << zakaznik->dajPrikazNaUlozenie() << endl;
+	}
 
+	for (auto predajna : *predajne_)
+	{
+		subor << predajna->dajPrikazNaUlozenie() << endl;
+	}
+
+	for (auto dodavatel : *dodavatelia_)
+	{
+		subor << dodavatel->dajPrikazNaUlozenie() << endl;
+	}
+
+	for (auto voda : *mineralky_)
+	{
+		subor << voda->dajPrikazNaUlozenie() << endl;
+	}
+
+	sklad_->ulozDoSuboru(subor);
 }
 // NACITANIE ZO SUBORU
-void System::nacitatZoSuboru(const string& subor)		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+void System::nacitatZoSuboru(string& subor)		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 {
 
 }
@@ -325,4 +399,10 @@ bool System::kontrolaDatumu(int datumP)
 	}
 	delete datum;
 	return false;
+}
+
+int System::prevedNaInt(const std::string & naInt)
+{
+	int intS = stoi(naInt);
+	return intS;
 }

@@ -25,6 +25,18 @@
     <Filter Include="Source Files\Aplikacia">
       <UniqueIdentifier>{8a9ea683-a5e2-4bc0-bff5-0a7a8d0abe73}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Prikaz">
+      <UniqueIdentifier>{b6408307-aae6-4740-a322-31b818844f7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Prikaz">
+      <UniqueIdentifier>{5d04700b-3da1-4eb3-a8aa-aa61d64cf861}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Prikaz\Prikazy">
+      <UniqueIdentifier>{e563c50c-9ba7-4738-aecb-ce6884c89a16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Prikaz\Prikazy">
+      <UniqueIdentifier>{aeeff390-4cbb-4dba-a616-b554a34329b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dodavatel.h">
@@ -52,9 +64,6 @@
       <Filter>Header Files\Aplikacia</Filter>
     </ClInclude>
     <ClInclude Include="Datum.h">
-      <Filter>Header Files\Aplikacia</Filter>
-    </ClInclude>
-    <ClInclude Include="PolozkaOBJ.h">
       <Filter>Header Files\Aplikacia</Filter>
     </ClInclude>
     <ClInclude Include="Array.h">
@@ -102,6 +111,54 @@
     <ClInclude Include="Vector.h">
       <Filter>Header Files\Structure</Filter>
     </ClInclude>
+    <ClInclude Include="IPrikaz.h">
+      <Filter>Header Files\Prikaz</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Header Files\Prikaz</Filter>
+    </ClInclude>
+    <ClInclude Include="NazvyPrikazov.h">
+      <Filter>Header Files\Prikaz</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazDodavatel.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazDodavka.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazMineralnaVoda.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazObjednavka.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazPomoc.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazPrazdny.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazPredajna.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazProgram.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazSklad.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazUkonci.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="PrikazZakaznik.h">
+      <Filter>Header Files\Prikaz\Prikazy</Filter>
+    </ClInclude>
+    <ClInclude Include="IUkladatelny.h">
+      <Filter>Header Files\Prikaz</Filter>
+    </ClInclude>
+    <ClInclude Include="Polozka.h">
+      <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -134,9 +191,6 @@
     <ClCompile Include="Datum.cpp">
       <Filter>Source Files\Aplikacia</Filter>
     </ClCompile>
-    <ClCompile Include="PolozkaOBJ.cpp">
-      <Filter>Source Files\Aplikacia</Filter>
-    </ClCompile>
     <ClCompile Include="DSRoutines.cpp">
       <Filter>Source Files\Structure</Filter>
     </ClCompile>
@@ -145,6 +199,51 @@
     </ClCompile>
     <ClCompile Include="Vector.cpp">
       <Filter>Source Files\Structure</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>Source Files\Prikaz</Filter>
+    </ClCompile>
+    <ClCompile Include="IPrikaz.cpp">
+      <Filter>Source Files\Prikaz</Filter>
+    </ClCompile>
+    <ClCompile Include="NazvyPrikazov.cpp">
+      <Filter>Source Files\Prikaz</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazDodavatel.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazDodavka.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazMineralnaVoda.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazObjednavka.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazPomoc.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazPrazdny.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazPredajna.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazProgram.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazSklad.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazUkonci.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="PrikazZakaznik.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+    <ClCompile Include="Polozka.cpp">
+      <Filter>Source Files\Aplikacia</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

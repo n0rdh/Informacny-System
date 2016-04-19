@@ -25,36 +25,28 @@ Predajna & Predajna::operator=(const Predajna & dalsiaPredajna)
 	return *this;
 }
 
-bool Predajna::operator==(const Predajna& dalsiaPredajna) const
-{
-	if (*adresa_ != *dalsiaPredajna.adresa_ || zona_ != dalsiaPredajna.zona_) {
-		return false;
-	}
-	else
-	{
-		return true;
-	}
-}
-
-
-string& Predajna::dajNazov() const
+const string& Predajna::dajNazov() const
 {
 	return *adresa_;
 }
 
-string& Predajna::dajMenoZakaznika() const
+const string& Predajna::dajMenoZakaznika() const
 {
 	return *menoZakaznika_;
 }
 
-int Predajna::dajZona() const
+const int Predajna::dajZona() const
 {
 	return zona_;
 }
 
 Predajna::~Predajna()
 {
-
-	cout << "###################################################  Destruktor Predajna   ###" << endl;
 	delete adresa_;
+}
+
+string Predajna::dajPrikazNaUlozenie() const
+{
+	return "predajna pridaj " + *menoZakaznika_
+		+ " " + *adresa_ + " " + to_string(zona_);
 }

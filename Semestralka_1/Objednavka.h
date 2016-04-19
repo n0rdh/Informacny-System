@@ -4,15 +4,16 @@
 #include "Datum.h"
 #include "ArrayList.h"
 #include "Mineralna_voda.h"
-#include "PolozkaOBJ.h"
+#include "Polozka.h"
 #include <string>
+#include "IUkladatelny.h"
 
 enum StavObjednavky
 {
 	soCAKAJUCA, soNEPLATNA, soODOSLANA, soVYEXPEDOVANA
 };
 
-class Objednavka
+class Objednavka : public IUkladatelny
 {
 public:
 	Objednavka(const Predajna & predajna, int datum);
@@ -25,7 +26,7 @@ public:
 	int dajDatumDorucenia() const;
 	std::string vypisObjednavku() const;	
 	void pridajPolozku(Mineralna_voda& typVody, int mnozstvo);
-	DS::ArrayList<Polozka*>* dajPolozky();
+	const DS::ArrayList<Polozka*>* dajPolozky();
 
 	bool jeNeplatna() const;
 	bool jeCakajuca() const;
@@ -34,6 +35,8 @@ public:
 	bool oznacNeplatnu();
 	bool oznacOdoslana();
 	bool oznacVyexpedovanu();
+
+	std::string dajPrikazNaUlozenie() const override;
 
 	~Objednavka();
 

@@ -64,7 +64,7 @@ void Velkosklad::vyskladnenie(int datum)
 {
 	if (!autoPrevoz_->isEmpty())
 	{
-		cout << "~ Auto este nie je prazdne " << endl;
+		cerr << "~ Auto este nie je prazdne " << endl;
 		return;
 	}
 	zaskladni();
@@ -96,7 +96,7 @@ void Velkosklad::vyskladnenie(int datum)
 }
 
  
-void Velkosklad::vyhladanieOdberatelaVody(string & voda, int odkedy, int dokedy)
+void Velkosklad::vyhladanieOdberatelaVody(const string & voda, int odkedy, int dokedy)
 {
 	map<string, int> zoznamMap;
 	for (auto objednavka : *objednavky_)
@@ -141,7 +141,7 @@ void Velkosklad::vyhladanieOdberatelaVody(string & voda, int odkedy, int dokedy)
 		 << maxZakaznik << " - " << maxMnozstvo << " ks " << endl;
 }
 
-void Velkosklad::vyhladanieOdberatelaOdDodavatela(string & dodvatel, int odkedy, int dokedy)
+void Velkosklad::vyhladanieOdberatelaOdDodavatela(const string & dodvatel, int odkedy, int dokedy)
 {
 	map<string, int> zoznamMap;
 	for (auto objednavka : *objednavky_)
@@ -311,7 +311,7 @@ void Velkosklad::zoradDodavky()
 	PriorityQueue_Heap<Dodavka*>*  zoradenie = new PriorityQueue_Heap<Dodavka*>();
 	for (auto dodavka : *dodavky_)
 	{
-		Dodavka* nova = new Dodavka(dodavka->dajMinetralku(), dodavka->dajMnozstvo(), dodavka->dajDatumPlnenia());
+		Dodavka* nova = new Dodavka(*dodavka->dajMinetralku(), dodavka->dajMnozstvo(), dodavka->dajDatumPlnenia());
 		zoradenie->push(nova->dajDatumPlnenia(), nova);
 	}
 	dodavky_->clear();
@@ -336,7 +336,7 @@ void Velkosklad::zaskladni()	// funkcne
 	{   
 		for (auto polozka : *sklad_)
 		{
-			if (polozka->dajMineralku().dajNazov() == dodavka->dajMinetralku().dajNazov())
+			if (polozka->dajMineralku().dajNazov() == dodavka->dajMinetralku()->dajNazov())
 			{
 				polozka->zvysMnozstvo(dodavka->dajMnozstvo());
 				preskoc = true;
@@ -345,7 +345,7 @@ void Velkosklad::zaskladni()	// funkcne
 		}
 		if (!preskoc)
 		{
-			Polozka* novaPolozka = new Polozka(dodavka->dajMinetralku(), dodavka->dajMnozstvo());
+			Polozka* novaPolozka = new Polozka(*dodavka->dajMinetralku(), dodavka->dajMnozstvo());
 			sklad_->add(novaPolozka);
 		}
 		preskoc = false;
@@ -428,13 +428,13 @@ void Velkosklad::pripravVyskladnenieMnozstvoDodavky(Objednavka * objednavka)
 		mnozstvo = polozka->dajMnozstvo();		  // ulozim pozadovane mnoztvo
 		for (auto dodavka : *dodavky_)
 		{
-			if (polozka->dajMineralku().dajNazov() == dodavka->dajMinetralku().dajNazov()// skontrolujem ci sa jedna o rovnaku vodu
+			if (polozka->dajMineralku().dajNazov() == dodavka->dajMinetralku()->dajNazov()// skontrolujem ci sa jedna o rovnaku vodu
 				&& dodavka->dajMnozstvo() - mnozstvo > 0)// ak je dodavka vacsia ako mnozstvo, tak ju znizim
 			{
 				dodavka->znizMnozstvo(mnozstvo);
 				break;
 			}
-			else if (polozka->dajMineralku().dajNazov() == dodavka->dajMinetralku().dajNazov()
+			else if (polozka->dajMineralku().dajNazov() == dodavka->dajMinetralku()->dajNazov()
 					&& dodavka->dajMnozstvo() - mnozstvo <= 0)
 			{
 				dodavka->znizMnozstvo(dodavka->dajMnozstvo());
@@ -483,4 +483,18 @@ void Velkosklad::vymazZoZoznamu(DS::ArrayList<T>& zoznam)
 		delete prvok;
 	}
 	zoznam.clear();
+}
+
+
+void Velkosklad::ulozDoSuboru(std::ostream& subor)
+{
+	for (auto dodavka : *dodavky_)
+	{
+		subor << dodavka->dajPrikazNaUlozenie() << endl;
+	}
+
+	for (auto objednavka : *objednavky_)
+	{
+		subor << objednavka->dajPrikazNaUlozenie() << endl;
+	}
 }

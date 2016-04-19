@@ -1,4 +1,4 @@
-#include "PolozkaOBJ.h"
+#include "Polozka.h"
 #include <string>
 
 using namespace std;
@@ -54,5 +54,4 @@ string Polozka::dajVypisPolozky()
 
 Polozka::~Polozka()
 {
-	//cout << "###################################################  Destruktor Polozka		###" << endl;
 }

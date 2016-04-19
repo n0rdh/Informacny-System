@@ -24,25 +24,23 @@ Zakaznik & Zakaznik::operator=(const Zakaznik & zakaznikD)
 	return *this;
 }
 
-bool Zakaznik::operator==(const Zakaznik & zakaznikD) const
-{
-	return false;
-}
-
-string& Zakaznik::dajNazov() const
+const string& Zakaznik::dajNazov() const
 {
 	return *nazov_;
 }
 
-string& Zakaznik::dajAdresu() const
+const string& Zakaznik::dajAdresu() const
 {
 	return *adresa_;
 }
 
 Zakaznik::~Zakaznik()
 {
-
-	cout << "###################################################  Destruktor Zakaznik    ###" << endl;
 	delete nazov_;
 	delete adresa_;
+}
+
+string Zakaznik::dajPrikazNaUlozenie() const
+{
+	return "zakaznik pridaj " + *nazov_ + " " + *adresa_;
 }

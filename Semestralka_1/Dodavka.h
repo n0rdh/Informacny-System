@@ -1,8 +1,9 @@
 #pragma once
 #include "Mineralna_voda.h"
 #include "Datum.h"
+#include "IUkladatelny.h"
 
-class Dodavka
+class Dodavka : IUkladatelny
 {	  
 public:
 	Dodavka(const Mineralna_voda& mineralka, unsigned int mnozstvo, int datum);
@@ -12,13 +13,14 @@ public:
 	int dajDatumPlnenia() const; 
 	int dajMnozstvo() const;
 	void znizMnozstvo(int kolko);
-	const Mineralna_voda & dajMinetralku();
+	const Mineralna_voda * dajMinetralku();
 	std::string toString() const;
+	std::string dajPrikazNaUlozenie() const override;
 
 	~Dodavka();
 
 private:
-	Mineralna_voda mineralka_;
+	const Mineralna_voda * mineralka_;
 	unsigned int mnozstvo_;
 	int datumPlnenia_;
 

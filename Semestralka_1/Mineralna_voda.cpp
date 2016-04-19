@@ -27,12 +27,12 @@ Mineralna_voda & Mineralna_voda::operator=(const Mineralna_voda & dalsiaMineralk
 	return *this;
 }
 
-string & Mineralna_voda::dajNazov() const
+const string & Mineralna_voda::dajNazov() const
 {
 	return *nazov_;
 }
 
-string & Mineralna_voda::dajNazovDodavatela() const
+const string & Mineralna_voda::dajNazovDodavatela() const
 {
 	return dodavatel_->dajNazov();
 }
@@ -49,8 +49,11 @@ Dodavatel * Mineralna_voda::dajDodavatela() const
 
 Mineralna_voda::~Mineralna_voda()
 {
-
-	cout << "###################################################  Destruktor Minreralky     ###" << endl;
 	delete nazov_;
 	delete ean_;
+}
+string Mineralna_voda::dajPrikazNaUlozenie() const
+{
+	return "mineralnavoda pridaj " + *nazov_ + " "
+		+ *ean_ + " " + dodavatel_->dajNazov();
 }

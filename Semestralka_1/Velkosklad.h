@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Zakaznik.h"
-#include "PolozkaOBJ.h"
+#include "Polozka.h"
 #include "LinkedList.h"
 #include "Stack.h"
 #include "ArrayList.h"
@@ -19,8 +19,8 @@ public:
 
 	void vyskladnenie(int datum);
 	void vyhladanieDodavatela(int odkedy, int dokedy);
-	void vyhladanieOdberatelaVody(std::string & voda, int odkedy, int dokedy);
-	void vyhladanieOdberatelaOdDodavatela(std::string & dodvatel, int odkedy, int dokedy);
+	void vyhladanieOdberatelaVody(const std::string & voda, int odkedy, int dokedy);
+	void vyhladanieOdberatelaOdDodavatela(const std::string & dodvatel, int odkedy, int dokedy);
 	void odovzdajZakanikovy();
 	void vypisNeplatneObjednavky();		
 	void vypisVsetkyObjednavky();
@@ -32,6 +32,7 @@ public:
 	bool pripravVyskladnenieMnozstvoSklad(Objednavka * objednavka);
 	void triedeniePoloziek(DS::ArrayList<Polozka*>& polozky);
 	
+	void ulozDoSuboru(std::ostream& subor);
 	void vyprazdnitAuto();
 	void zoradPole(DS::ArrayList<std::string>& pole);
 	template <typename T>

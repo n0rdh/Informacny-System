@@ -1,12 +1,65 @@
 
 #include <iostream>
-#include "System.h"
+#include "Parser.h"
 
 using namespace std;
 
 int main()
 {
-	
+	cout << "**************************************************************** " << endl;
+	cout << "		    Semestralna praca 1			    " << endl;
+	cout << "		  autor Tomas Illo 5ZI02B			    " << endl;
+	cout << "		System pre sklad mineralnych vod	    " << endl;
+	cout << "*****************************************************************" << endl;
+
+	try
+	{
+		Parser parser(&cin);
+
+		while (parser.bolPrikazUkonceniaSpusteny() == false)
+		{
+			try
+			{
+				cout << "#### zadaj prikaz >>>>>  ";
+				IPrikaz* prikaz = parser.nacitajPrikaz();
+				if (prikaz == nullptr)
+				{
+					cerr << "Nespravny prikaz!" << endl;
+				}
+				else
+				{
+					prikaz->vykonaj();
+					delete prikaz;
+				}
+			}
+			catch (const std::exception& e)
+			{
+				cerr << "Chyba " << e.what() << endl;
+			}
+		}
+	}
+	catch (const std::exception& e)
+	{
+		cerr << "Chyba: " << e.what() << endl;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*
 	string nazovDod = "RajecSRO";
 	string adresaDod = "RajeckeTeplice";
 	string nazovDod2 = "CocacolaSRO";
@@ -66,9 +119,6 @@ int main()
 	sys->vyskladnenie();
 	sys->vypisSkladu();
 	sys->odovzdanieZakaznikovi();
-	//sys->vyhladanieDodavatela(20170613, 20161013);
-	//adresaPredajna,typMinVody, mnozstvo, datumDorucenia
-	//sys->vypisanieVsetkychPoziadaviekNeplat();
 	sys->kontrolaPoziadaviekZ();
 	sys->vyhladanieDodavatela(20160416, 20160813);
 	//cout << endl;
@@ -102,5 +152,6 @@ int main()
 	//cout << endl;
 	//cout << endl;
 	cout << endl;
-	return 0;											  
+	return 0;				
+	*/
 }  

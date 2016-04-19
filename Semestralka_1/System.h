@@ -1,5 +1,5 @@
 #pragma once
-#include "PolozkaOBJ.h"
+#include "Polozka.h"
 #include "Zakaznik.h"
 #include "Predajna.h"
 #include "Mineralna_voda.h"
@@ -13,7 +13,7 @@ class System
 {
 public:
 	System();
-	System& getInstancia();
+	static System& dajInstanciu();
 	
 	bool pridanieNovehoTypuMVody(const std::string& nazov,
 								 const  std::string& kodEAN,
@@ -23,32 +23,43 @@ public:
 	bool pridanieNovehoZakaznika(const std::string& meno,
 								 const std::string& adresa);
 	bool pridanieNovejPredajne(const std::string& menoZakaznika,	  
-							   const std::string& adresa, const int zona);
+							   const std::string& adresa, 
+							   const std::string& zona);
 	bool zaevidovanieObjednavky(const std::string& adresaPredajna,
-								int datumDorucenia,
+								const std::string& datumDorucenia,
 								const std::string& nazovMV,
-								unsigned int mnozstvo);
+								const std::string& mnozstvo,
+								const std::string& polozky);
 	bool zaevidovanieNovejDodavky(const std::string& nazovMV,
-								 unsigned int mnozstvo, int datumPlnenia);
+								  const std::string& mnozstvo,
+								  const std::string& datumPlnenia);
+
+	void vyhladanieDodavatela(const std::string & odkedy,
+							  const std::string & dokedy);
+	void vyhladanieOdberatelaTypuMinVody(const std::string & voda,
+										 const std::string & odkedy,
+										 const std::string & dokedy);
+	void vyhladanieOdberatelaOdDodavatela(const std::string & dodavatel,
+										  const std::string & odkedy,
+										  const std::string & dokedy);
 	void kontrolaPoziadaviekZ();
 	void odovzdanieZakaznikovi(); 
 	void vyskladnenie(); 
-	void vyhladanieDodavatela(int odkedy, int dokedy) const;
 	void vypisSkladu(); 
 	void vypisanieVsetkychPoziadaviekNeplat();
-	void vyhladanieOdberatelaTypuMinVody(std::string & voda,int odkedy, int dokedy) const;
-	void vyhladanieOdberatelaOdDodavatela(std::string & dodavatel, int odkedy, int dokedy) const;
-	void ulozitDoSuboru(const std::string& subor);
-	void nacitatZoSuboru(const std::string& subor);
+	void ulozitDoSuboru(std::ostream& subor);
+	void nacitatZoSuboru(std::string& subor);
 
-	bool kontrolaDatumu(int datum);
+	
 	bool kontrolaEAN(const std::string & ean);
 	void nastavDatum();
 	void zoradPole(DS::ArrayList<std::string>& pole);
+	int prevedNaInt(const std::string & naInt);
 	Dodavatel* najdiDodavatela(const std::string& nazov);
 	Mineralna_voda* najdiMineralnuVodu(const std::string& nazov);
 	Zakaznik * najdiZakaznika(const std::string & nazov);
 	Predajna * najdiPredajnu(const std:: string & adresa);
+	bool kontrolaDatumu(int datum);
 	template <typename T>
 	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
 

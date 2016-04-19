@@ -14,8 +14,6 @@ Dodavatel::Dodavatel(const Dodavatel & dalsiDodavatel)
 
 Dodavatel::~Dodavatel()
 {
-
-	cout << "############################################  Destruktor Dodavatela    ###" << endl;
 	delete nazov_;
 	delete adresa_;
 }
@@ -31,12 +29,17 @@ Dodavatel & Dodavatel::operator=(const Dodavatel & dalsiDodavatel)
 	return *this;
 }
 
-string & Dodavatel::dajNazov() const
+const string & Dodavatel::dajNazov() const
 {
 	return *nazov_;
 }
 
-string & Dodavatel::dajAdresu() const
+const string & Dodavatel::dajAdresu() const
 {
 	return *adresa_;
+}
+
+string Dodavatel::dajPrikazNaUlozenie() const
+{
+	return "dodavatel pridaj " + *nazov_ + " " + *adresa_;
 }

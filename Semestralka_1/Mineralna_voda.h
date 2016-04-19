@@ -1,29 +1,29 @@
 #pragma once
 #include <iostream>
 #include "Dodavatel.h"
+#include "IUkladatelny.h"
 
-class Mineralna_voda
+class Mineralna_voda  : public IUkladatelny
 {
 public:
 	Mineralna_voda(const std::string& nazovVody, const  std::string& ean,Dodavatel& dodavatel);
 	Mineralna_voda(const Mineralna_voda& mineralkaD);																
 
 	Mineralna_voda& operator=(const Mineralna_voda& mineralkaD);
-	friend inline bool operator==(const Mineralna_voda& a, const Mineralna_voda& b);
+	friend inline bool operator==(const Mineralna_voda& prva, const Mineralna_voda& druha);
 
-	std::string& dajNazov() const;
-	std::string& dajNazovDodavatela() const;
+	const std::string& dajNazov() const;
+	const std::string& dajNazovDodavatela() const;
 	std::string& dajEAN() const;
 	Dodavatel * dajDodavatela() const;
-
+	std::string dajPrikazNaUlozenie() const override;
 	~Mineralna_voda();
 private:
 	std::string* ean_;	
 	std::string* nazov_;
 	Dodavatel* dodavatel_;
 };
-
-inline bool operator==(const Mineralna_voda& a, const Mineralna_voda& b)
+inline bool operator==(const Mineralna_voda& prva, const Mineralna_voda& druha)
 {
-	return *a.ean_ == *b.ean_;
+	return *prva.ean_ == *druha.ean_;
 }
