@@ -1,50 +1,57 @@
-﻿  Zakaznik.cpp
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(8): error C2061: syntax error: identifier 'Zakaznik'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2143: syntax error: missing ';' before '*'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2238: unexpected token(s) preceding ';'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2143: syntax error: missing ';' before '*'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2238: unexpected token(s) preceding ';'
-  Velkosklad.cpp
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(8): error C2061: syntax error: identifier 'Zakaznik'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2143: syntax error: missing ';' before '*'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2238: unexpected token(s) preceding ';'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2143: syntax error: missing ';' before '*'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2238: unexpected token(s) preceding ';'
-  System.cpp
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(8): error C2061: syntax error: identifier 'Zakaznik'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2143: syntax error: missing ';' before '*'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2238: unexpected token(s) preceding ';'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2143: syntax error: missing ';' before '*'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2238: unexpected token(s) preceding ';'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(39): error C2061: syntax error: identifier 'string'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(40): error C2061: syntax error: identifier 'string'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(76): error C2039: 'dajZakaznika': is not a member of 'Predajna'
-  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(6): note: see declaration of 'Predajna'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(76): error C2661: 'Predajna::Predajna': no overloaded function takes 2 arguments
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(79): error C2039: 'dajZakaznika': is not a member of 'Predajna'
-  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(6): note: see declaration of 'Predajna'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(79): error C2227: left of '->dajNazov' must point to class/struct/union/generic type
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(174): error C2511: 'void System::vyhladanieOdberatelaTypuMinVody(std::string &,int,int) const': overloaded member function not found in 'System'
-  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(13): note: see declaration of 'System'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.cpp(179): error C2511: 'void System::vyhladanieOdberatelaOdDodavatela(std::string &,int,int) const': overloaded member function not found in 'System'
-  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(13): note: see declaration of 'System'
-  Predajna.cpp
-  Main.cpp
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(8): error C2061: syntax error: identifier 'Zakaznik'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2143: syntax error: missing ';' before '*'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(16): error C2238: unexpected token(s) preceding ';'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2143: syntax error: missing ';' before '*'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\predajna.h(23): error C2238: unexpected token(s) preceding ';'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(39): error C2061: syntax error: identifier 'string'
-c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\system.h(40): error C2061: syntax error: identifier 'string'
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Objednavka.cpp
+﻿  Velkosklad.cpp
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(160): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(157): note: while compiling class template member function 'void DS::ArrayList<Polozka *>::add(const T &)'
+          with
+          [
+              T=Polozka *
+          ]
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\velkosklad.cpp(170): note: see reference to function template instantiation 'void DS::ArrayList<Polozka *>::add(const T &)' being compiled
+          with
+          [
+              T=Polozka *
+          ]
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\velkosklad.cpp(9): note: see reference to class template instantiation 'DS::ArrayList<Polozka *>' being compiled
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(172): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(166): note: while compiling class template member function 'void DS::ArrayList<Polozka *>::insert(const T &,const int)'
+          with
+          [
+              T=Polozka *
+          ]
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(199): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(194): note: while compiling class template member function 'Polozka &DS::ArrayList<Polozka *>::removeAt(const int)'
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(184): note: see reference to function template instantiation 'Polozka &DS::ArrayList<Polozka *>::removeAt(const int)' being compiled
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(240): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(239): note: while compiling class template member function 'DS::Iterator<T> DS::ArrayList<T>::end(void) const'
+          with
+          [
+              T=Polozka *
+          ]
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\velkosklad.cpp(72): note: see reference to function template instantiation 'DS::Iterator<T> DS::ArrayList<T>::end(void) const' being compiled
+          with
+          [
+              T=Polozka *
+          ]
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\priorityqueue_heap.h(58): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\priorityqueue_heap.h(55): note: while compiling class template member function 'void DS::PriorityQueue_Heap<Objednavka *>::push(const int,const T &)'
+          with
+          [
+              T=Objednavka *
+          ]
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\velkosklad.cpp(114): note: see reference to function template instantiation 'void DS::PriorityQueue_Heap<Objednavka *>::push(const int,const T &)' being compiled
+          with
+          [
+              T=Objednavka *
+          ]
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\velkosklad.cpp(67): note: see reference to class template instantiation 'DS::PriorityQueue_Heap<Objednavka *>' being compiled
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\priorityqueue_heap.h(74): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\priorityqueue_heap.h(73): note: while compiling class template member function 'Objednavka DS::PriorityQueue_Heap<Objednavka *>::pop(void)'
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\velkosklad.cpp(124): note: see reference to function template instantiation 'Objednavka DS::PriorityQueue_Heap<Objednavka *>::pop(void)' being compiled
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(263): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(254): note: while compiling class template member function 'void DS::ArrayList<Polozka *>::changeCapacity(size_t)'
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(248): note: see reference to function template instantiation 'void DS::ArrayList<Polozka *>::changeCapacity(size_t)' being compiled
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(119): note: while compiling class template member function 'DS::ArrayList<Polozka *> &DS::ArrayList<Polozka *>::operator =(const DS::ArrayList<Polozka *> &)'
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(114): note: see reference to function template instantiation 'DS::ArrayList<Polozka *> &DS::ArrayList<Polozka *>::operator =(const DS::ArrayList<Polozka *> &)' being compiled
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\arraylist.h(85): note: while compiling class template member function 'DS::ArrayList<Polozka *>::ArrayList(const DS::ArrayList<Polozka *> &)'
+  c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\velkosklad.cpp(17): note: see reference to function template instantiation 'DS::ArrayList<Polozka *>::ArrayList(const DS::ArrayList<Polozka *> &)' being compiled
+c:\users\tomáš\desktop\school\github\informacny-system\semestralka_1\linkedlist.h(243): warning C4172: returning address of local variable or temporary: data
+  Semestralka_1.vcxproj -> C:\Users\Tomáš\Desktop\School\GitHub\Informacny-system\x64\Debug\Informacny_system.exe

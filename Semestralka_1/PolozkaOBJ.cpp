@@ -54,6 +54,5 @@ string Polozka::dajVypisPolozky()
 
 Polozka::~Polozka()
 {
-
-	cout << "###################################################  Destruktor Polozka		###" << endl;
+	//cout << "###################################################  Destruktor Polozka		###" << endl;
 }

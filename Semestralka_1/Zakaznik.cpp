@@ -1,4 +1,5 @@
 #include "Zakaznik.h"
+
 using namespace std;
 
 Zakaznik::Zakaznik(const string& nazov,const string& adresa) :

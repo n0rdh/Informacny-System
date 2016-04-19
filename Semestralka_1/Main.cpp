@@ -34,12 +34,17 @@ int main()
 	sys->pridanieNovehoTypuMVody(budiska, ean2, nazovDod2);
 	sys->pridanieNovehoTypuMVody(bublinky, ean1, nazovDod);
 	cout << endl;
-	sys->zaevidovanieNovejDodavky(bublinky, 100, 20160701);
-	sys->zaevidovanieNovejDodavky(rajecVoda, 100, 20160803);
-	sys->zaevidovanieNovejDodavky(budiska, 100, 20150112);
-	sys->zaevidovanieNovejDodavky(cocacola, 100, 20160101);
+	sys->zaevidovanieNovejDodavky(bublinky, 10, 20160701);
+	sys->zaevidovanieNovejDodavky(rajecVoda, 10, 20160803);
+	sys->zaevidovanieNovejDodavky(budiska, 10, 20150112);
+	sys->zaevidovanieNovejDodavky(cocacola, 10, 20160101);
 	cout << endl;
+	sys->zaevidovanieObjednavky(adresaPredajne, 20160420, cocacola, 100);
 
+	sys->zaevidovanieObjednavky(adresaPredajne, 20160420, rajecVoda, 61);
+	sys->zaevidovanieObjednavky(adresaPredajne, 20160420, bublinky, 30);
+	sys->zaevidovanieObjednavky(adresaPredajne, 20160420, cocacola, 10);
+	sys->vypisSkladu();
 	sys->zaevidovanieObjednavky(adresaPredajne, 20160613, cocacola, 188);
 	sys->zaevidovanieObjednavky(adresaPredajne, 20160417, bublinky, 321);
 	sys->zaevidovanieObjednavky(adresaPredajne, 20160418, cocacola, 1800);
@@ -49,23 +54,23 @@ int main()
 	sys->zaevidovanieObjednavky(adresaPredajne, 20160417, cocacola, 18);
 	sys->zaevidovanieObjednavky(adresaPredajne, 20160421, rajecVoda, 61);
 	sys->zaevidovanieObjednavky(adresaPredajne, 20160416, bublinky, 30);
+	
 	//sys->vyhladanieDodavatela(20170613, 20161013);
 	//adresaPredajna,typMinVody, mnozstvo, datumDorucenia
-	//sys->vypisanieVsetkychPoziadaviekNeplat();
-	cout << endl;
-	cout << endl;
+	sys->vypisanieVsetkychPoziadaviekNeplat();
 	//sys->kontrolaPoziadaviekZ();
-	sys->vyhladanieDodavatela(20160416, 20160813);
-	cout << endl;
-	cout << endl;
-	cout << endl;
+	//sys->vyhladanieDodavatela(20160416, 20160813);
+	//cout << endl;
+	//cout << endl;
+	//cout << endl;
 	cout << endl;
 	sys->vyskladnenie();
-	//sys->vypisSkladu();
+	sys->vypisanieVsetkychPoziadaviekNeplat();
+	sys->vypisSkladu();
 	//sys->vypisanieVsetkychPoziadaviekNeplat();
-	cout << endl;
-	cout << endl;
-	cout << endl;
+	//cout << endl;
+	//cout << endl;
+	//cout << endl;
 	cout << endl;
 	//sys->vypisDodavky();
 	return 0;											  

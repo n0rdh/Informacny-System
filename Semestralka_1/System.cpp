@@ -64,19 +64,20 @@ bool System::pridanieNovejPredajne(const string& menoZakaznika, const string& ad
 	Zakaznik* zak = najdiZakaznika(menoZakaznika);
 	if (zak == nullptr)
 	{
-		cout << "~ Zakaznik '" << menoZakaznika << "' uz neexistuje!!" << endl;
+		cout << "~ Zakaznik '" << menoZakaznika << "' neexistuje!!" << endl;
 		return false;
-	}
+	}	 
 	Predajna* predaj = najdiPredajnu(adresa);
 	if (predaj != nullptr)
 	{
 		cout << "~ Predajna na tejto adrese uz existuje!!" << endl;
 		return false;
 	}
-	Predajna* novaPredajna = new Predajna(predaj->dajZakaznika(), adresa, zona);
+	
+	Predajna* novaPredajna = new Predajna(menoZakaznika, adresa, zona);
 	predajne_->add(novaPredajna);
 	cout << "$ Pridana predajna na adrese '" << novaPredajna->dajNazov() << "' zakaznikovi '"
-		<< novaPredajna->dajZakaznika()->dajNazov() << "' " << endl;
+		<< novaPredajna->dajMenoZakaznika() << "' " << endl;
 	return true;
 }
 // PRIDANIE NOVEHO TYPU MINERALNEJ VODY 
@@ -187,9 +188,7 @@ void System::vypisSkladu()
 // VYPIS NEPLATNYCH OBJEDNAVOK
 void System::vypisanieVsetkychPoziadaviekNeplat()
 {
-	cout << endl;
-	sklad_->vypisVsetkyDodavky();
-	//sklad_->vypisNeplatneObjednavky();
+	sklad_->vypisNeplatneObjednavky();
 }
 // ULOZENIE DO SUBORU
 void System::ulozitDoSuboru(const string& subor)	   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -209,13 +208,8 @@ void System::odovzdanieZakaznikovi()
 // VYSKLADNENIE
 void System::vyskladnenie()
 {
-	sklad_->vypisSklad();
-	cout << endl;
-	cout << endl;
 	sklad_->vyskladnenie(aktualDatum_);
 	cout << endl;
-	cout << endl;
-	sklad_->vypisSklad();
 }
 //___________________________________________________________________________POMOCNE FUNKCIE
 void System::nastavDatum()

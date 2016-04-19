@@ -31,7 +31,7 @@ Datum::Datum() {
 
 Datum::~Datum()
 {
-	cout << "##############################################  Destruktor Datumu    ###" << endl;
+
 }
 
 

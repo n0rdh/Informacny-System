@@ -1,12 +1,15 @@
 #include "Predajna.h"
 using namespace std;
 
-Predajna::Predajna(Zakaznik * zakaznik, const string& adresa,const int zona) :
-	zakaznik_(zakaznik), adresa_(new string(adresa)), zona_(zona)
+Predajna::Predajna(const string & menoZakaznika, const string& adresa, const int zona) :
+	menoZakaznika_(new string(menoZakaznika)),
+	adresa_(new string(adresa)),
+	zona_(zona)
 {
 }
 
 Predajna::Predajna(const Predajna & dalsiaPredajna) :
+	menoZakaznika_(new string(*dalsiaPredajna.menoZakaznika_)),
 	adresa_(new string(*dalsiaPredajna.adresa_)),
 	zona_(dalsiaPredajna.zona_)
 {
@@ -38,9 +41,9 @@ string& Predajna::dajNazov() const
 	return *adresa_;
 }
 
-Zakaznik * Predajna::dajZakaznika() const
+string& Predajna::dajMenoZakaznika() const
 {
-	return zakaznik_;
+	return *menoZakaznika_;
 }
 
 int Predajna::dajZona() const

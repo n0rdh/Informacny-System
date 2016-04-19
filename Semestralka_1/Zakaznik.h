@@ -1,6 +1,6 @@
 #pragma once
 #include "Predajna.h"
-#include <vector>
+#include <iostream>
 
 class Zakaznik
 {

@@ -36,8 +36,8 @@ public:
 	void vyhladanieDodavatela(int odkedy, int dokedy) const;
 	void vypisSkladu(); 
 	void vypisanieVsetkychPoziadaviekNeplat();
-	void vyhladanieOdberatelaTypuMinVody(string & voda,int odkedy, int dokedy) const;
-	void vyhladanieOdberatelaOdDodavatela(string & dodavatel, int odkedy, int dokedy) const;
+	void vyhladanieOdberatelaTypuMinVody(std::string & voda,int odkedy, int dokedy) const;
+	void vyhladanieOdberatelaOdDodavatela(std::string & dodavatel, int odkedy, int dokedy) const;
 	void ulozitDoSuboru(const std::string& subor);
 	void nacitatZoSuboru(const std::string& subor);
 
