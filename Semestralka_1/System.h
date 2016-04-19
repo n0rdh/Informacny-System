@@ -42,18 +42,15 @@ public:
 	void nacitatZoSuboru(const std::string& subor);
 
 	bool kontrolaDatumu(int datum);
-	template <typename T>
-	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
-	void vypisDodavky();
-
+	bool kontrolaEAN(const std::string & ean);
+	void nastavDatum();
 	void zoradPole(DS::ArrayList<std::string>& pole);
-
 	Dodavatel* najdiDodavatela(const std::string& nazov);
 	Mineralna_voda* najdiMineralnuVodu(const std::string& nazov);
 	Zakaznik * najdiZakaznika(const std::string & nazov);
 	Predajna * najdiPredajnu(const std:: string & adresa);
-
-	void nastavDatum();
+	template <typename T>
+	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
 
 	~System();
 

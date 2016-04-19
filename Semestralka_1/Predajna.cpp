@@ -36,6 +36,7 @@ bool Predajna::operator==(const Predajna& dalsiaPredajna) const
 	}
 }
 
+
 string& Predajna::dajNazov() const
 {
 	return *adresa_;

@@ -48,6 +48,10 @@ string Objednavka::dajStavObjednavky() const
 	{
 		return "VYEXPEDOVANA";
 	}
+	else if (stavObjednavky_ == soODOSLANA)
+	{
+		return "ODOSLANA";
+	}
 }
 
 int Objednavka::dajDatumDorucenia() const
@@ -68,6 +72,8 @@ string Objednavka::vypisObjednavku() const
 		str.append(to_string(polozka->dajMnozstvo()));
 		str.append(" - ");
 		str.append(datum_->toString());
+		str.append(" - ");
+		str.append(dajStavObjednavky());
 		if (i > 1) { str.append("\n"); }
 	}
 	return str;
@@ -103,6 +109,16 @@ bool Objednavka::jeCakajuca() const
 	}
 }
 
+bool Objednavka::jeOdoslana() const
+{
+	if (stavObjednavky_ == soODOSLANA) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 bool Objednavka::jeVyexpedovana() const
 {
 	if (stavObjednavky_ == soVYEXPEDOVANA) {
@@ -126,10 +142,10 @@ bool Objednavka::oznacNeplatnu()
 	}
 }
 
-bool Objednavka::oznacVyexpedovanu()
+bool Objednavka::oznacOdoslana()
 {
 	if (stavObjednavky_ == soCAKAJUCA && odoslanie_ == true) {
-		stavObjednavky_ = soVYEXPEDOVANA;
+		stavObjednavky_ = soODOSLANA;
 		return true;
 	}
 	else
@@ -138,10 +154,10 @@ bool Objednavka::oznacVyexpedovanu()
 	}
 }
 
-bool Objednavka::oznacOdoslanu()
+bool Objednavka::oznacVyexpedovanu()
 {
-	if (stavObjednavky_ == soCAKAJUCA && odoslanie_ == false) {
-		odoslanie_ = true;
+	if (stavObjednavky_ == soCAKAJUCA) {
+		stavObjednavky_ = soVYEXPEDOVANA;
 		return true;
 	}
 	else

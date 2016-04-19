@@ -9,7 +9,7 @@
 
 enum StavObjednavky
 {
-	soCAKAJUCA, soNEPLATNA, soVYEXPEDOVANA
+	soCAKAJUCA, soNEPLATNA, soODOSLANA, soVYEXPEDOVANA
 };
 
 class Objednavka
@@ -29,10 +29,11 @@ public:
 
 	bool jeNeplatna() const;
 	bool jeCakajuca() const;
+	bool jeOdoslana() const;
 	bool jeVyexpedovana() const;
 	bool oznacNeplatnu();
+	bool oznacOdoslana();
 	bool oznacVyexpedovanu();
-	bool oznacOdoslanu();
 
 	~Objednavka();
 

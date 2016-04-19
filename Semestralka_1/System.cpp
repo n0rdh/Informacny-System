@@ -81,54 +81,53 @@ bool System::pridanieNovejPredajne(const string& menoZakaznika, const string& ad
 	return true;
 }
 // PRIDANIE NOVEHO TYPU MINERALNEJ VODY 
-bool System::pridanieNovehoTypuMVody(const string& nazov, const string& kodEAN, const string& nazovDodavatela)
+bool System::pridanieNovehoTypuMVody(const string& nazov, const string& ean, const string& nazovDodavatela)
 {
-	if (kodEAN.size() != 13)
-	{
-		cout << "~ Neplatny EAN kod ! " << endl;
-		return false;
-	}
+	if (!kontrolaEAN(ean)) return false;
 	Dodavatel* dodavatel = najdiDodavatela(nazovDodavatela);
 	if (dodavatel == nullptr)
 	{
 		cout << "~ Dodavatel '" << nazov << "'neexistuje!!" << endl;
 		return false;
 	}
-	Mineralna_voda* miner = najdiMineralnuVodu(nazov);
+	Mineralna_voda* miner = najdiMineralnuVodu(ean);
 	if (miner != nullptr)
 	{
-		cout << "~ Min.voda " << nazov << " uz existuje !!!" << endl;
+		cout << "~ Min.voda '" << ean << "' - '" << nazov
+			 << "' uz existuje !!!" << endl;
 		return false;
 	}
-	Mineralna_voda* novaMineralka = new Mineralna_voda(nazov, kodEAN, *dodavatel);			
+	Mineralna_voda* novaMineralka = new Mineralna_voda(nazov, ean, *dodavatel);
 	mineralky_->add(novaMineralka);
-	cout << "$ Pridana min.voda '" << novaMineralka->dajNazov() << "'" << endl;
+	cout << "$ Pridana min.voda '" << ean << "' - '" << nazov << "'" << endl;
 	return true;
 }
 // ZAEVIDOVANIE DODAVKY
-bool System::zaevidovanieNovejDodavky(const string& nazov, unsigned int mnozstvo, int datumPlnenia) 
+bool System::zaevidovanieNovejDodavky(const string& ean, unsigned int mnozstvo, int datumPlnenia) 
 {
+	if (!kontrolaEAN(ean)) return false;
 	if (kontrolaDatumu(datumPlnenia))
 	{
 		cout << "~ Neplatny datum " << endl;
 		return false;
 	}
 
-	Mineralna_voda * mineralka = najdiMineralnuVodu(nazov);
+	Mineralna_voda * mineralka = najdiMineralnuVodu(ean);
 	if (mineralka == nullptr)
 	{
-		cout << "~ Mineralka '" << nazov << "' neexistuje!!" << endl;
+		cout << "~ Mineralka '" << ean << "' neexistuje!!" << endl;
 		return false;
 	}
 	Dodavka* novaDodavka = new Dodavka(*mineralka, mnozstvo, datumPlnenia);
 	sklad_->zaevidujDodavku(novaDodavka);
-	cout << "$ Pridana dodavka mineralok '" << nazov << "'" << endl;
+	cout << "$ Pridana dodavka mineralok '" << ean << "' - '" << mineralka->dajNazov() << "'" << endl;
 	return true; 		
 } 
 // ZAEVIDOVANIE OBJEDNAVKY
 bool System::zaevidovanieObjednavky(const string& adresaPredajna, int datumDorucenia,
-									const string& typMinVody, unsigned int mnozstvo)
+									const string& ean, unsigned int mnozstvo)
 {
+	if (!kontrolaEAN(ean)) return false;
 	int i = 0;
 	if (kontrolaDatumu(datumDorucenia))
 	{
@@ -141,10 +140,10 @@ bool System::zaevidovanieObjednavky(const string& adresaPredajna, int datumDoruc
 		return false;
 	}
 	*/
-	Mineralna_voda* voda = najdiMineralnuVodu(typMinVody);
+	Mineralna_voda* voda = najdiMineralnuVodu(ean);
 	if (voda == nullptr)
 	{
-		cerr << "~ Mineralna voda " << typMinVody << " neexistuje!" << endl;
+		cerr << "~ Mineralna voda " << ean << " neexistuje!" << endl;
 		return false;
 	}
 	Predajna * predaj = najdiPredajnu(adresaPredajna);
@@ -156,38 +155,44 @@ bool System::zaevidovanieObjednavky(const string& adresaPredajna, int datumDoruc
 	Objednavka* novaObjednavka = new Objednavka(*predaj, datumDorucenia);
 	novaObjednavka->pridajPolozku(*voda, mnozstvo);		// TODO Pridavanie viacerich
 	sklad_->zaevidujObjednavku(novaObjednavka);
-	cout << "$ Pridana objednavka min.vod '" << typMinVody << "' - "
+	cout << "$ Pridana objednavka min.vod '" << ean << "' - "
 		 << mnozstvo << " ks" << endl;
 	return true;
 }		
 // KONTROLA POZIADAVIEK ZAKAZNIKA 
 void System::kontrolaPoziadaviekZ()	
 {
+	cout << endl;
 	sklad_->kontrolaPoziadaviek();
 }
 // VYHLADANIE NAJPOZADOVANEJSIEHO DODAVATELA														  
 void System::vyhladanieDodavatela(int odkedy, int dokedy) const
 {
+	cout << endl;
 	sklad_->vyhladanieDodavatela(odkedy,dokedy);
 }
 // VYHLADANIE NAJ ODBERATELA	    
-void System::vyhladanieOdberatelaTypuMinVody(string & voda, int odkedy, int dokedy) const  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+void System::vyhladanieOdberatelaTypuMinVody(string & ean, int odkedy, int dokedy) const  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 {
-	
+	cout << endl;
+	sklad_->vyhladanieOdberatelaVody(ean, odkedy, dokedy);
 }
 
 void System::vyhladanieOdberatelaOdDodavatela(string & dodavatel, int odkedy, int dokedy) const
 {
-	
+	cout << endl;
+	sklad_->vyhladanieOdberatelaOdDodavatela(dodavatel, odkedy, dokedy);
 }
 // VYPISANIE SKLADU
 void System::vypisSkladu()
 {
+	cout << endl;
 	sklad_->vypisSklad();
 }
 // VYPIS NEPLATNYCH OBJEDNAVOK
 void System::vypisanieVsetkychPoziadaviekNeplat()
 {
+	cout << endl;
 	sklad_->vypisNeplatneObjednavky();
 }
 // ULOZENIE DO SUBORU
@@ -203,13 +208,14 @@ void System::nacitatZoSuboru(const string& subor)		// !!!!!!!!!!!!!!!!!!!!!!!!!!
 // ODOVZDANIE ZAKAZNIKOVI
 void System::odovzdanieZakaznikovi()
 {
+	cout << endl;
 	sklad_->odovzdajZakanikovy();
 }
 // VYSKLADNENIE
 void System::vyskladnenie()
 {
-	sklad_->vyskladnenie(aktualDatum_);
 	cout << endl;
+	sklad_->vyskladnenie(aktualDatum_);
 }
 //___________________________________________________________________________POMOCNE FUNKCIE
 void System::nastavDatum()
@@ -273,11 +279,11 @@ Dodavatel * System::najdiDodavatela(const string & nazov)
 	return nullptr;
 }
 // NAJDI MINERALKU ak neexistuje vrati nullptr
-Mineralna_voda * System::najdiMineralnuVodu(const std::string & nazov)
+Mineralna_voda * System::najdiMineralnuVodu(const std::string & ean)
 {
 	for (auto voda : *mineralky_)
 	{
-		if (voda->dajNazov() == nazov)
+		if (voda->dajEAN() == ean)
 		{
 			return voda;
 		}
@@ -293,6 +299,15 @@ void System::vymazZoZoznamu(DS::ArrayList<T>& zoznam)
 		delete prvok;
 	}
 	zoznam.clear();
+}
+
+bool System::kontrolaEAN(const std::string & ean)
+{
+	if (ean.size() != 13)
+	{
+		cout << "~ Neplatny EAN kod ! " << endl;
+		return false;
+	}
 }
 // KONTROLOVANIE DATUMU
 bool System::kontrolaDatumu(int datumP)
@@ -310,9 +325,4 @@ bool System::kontrolaDatumu(int datumP)
 	}
 	delete datum;
 	return false;
-}
-
-void System::vypisDodavky()
-{
-	sklad_->vypisVsetkyDodavky();
 }

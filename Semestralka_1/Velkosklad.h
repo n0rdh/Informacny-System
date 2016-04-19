@@ -25,10 +25,12 @@ public:
 	void vypisNeplatneObjednavky();		
 	void vypisVsetkyObjednavky();
 	void vypisSklad();
-	void vypisVsetkyDodavky();
 	void kontrolaPoziadaviek();
 	void zoradDodavky();
 	void zaskladni();
+	void pripravVyskladnenieMnozstvoDodavky(Objednavka * objednavka);
+	bool pripravVyskladnenieMnozstvoSklad(Objednavka * objednavka);
+	void triedeniePoloziek(DS::ArrayList<Polozka*>& polozky);
 	
 	void vyprazdnitAuto();
 	void zoradPole(DS::ArrayList<std::string>& pole);
@@ -41,6 +43,6 @@ public:
 private:
 	DS::ArrayList<Polozka*>* sklad_;
 	DS::Stack<Objednavka*>* autoPrevoz_;
-	DS::ArrayList<Dodavka*>* dodavky_;
+	DS::LinkedList<Dodavka*>* dodavky_;
 	DS::ArrayList<Objednavka*>* objednavky_;
 };
