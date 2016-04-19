@@ -23,13 +23,11 @@ Velkosklad::Velkosklad(const Velkosklad & dalsiVelkosklad) :
 }
 
 Velkosklad::~Velkosklad()
-{
-				   
-	cout << "###################################################  Destruktor Skladu    ###" << endl;
-	//vymazZoZoznamu<Dodavka*>(*dodavky_);
+{		   
 	delete dodavky_;
 	vyprazdnitAuto();
 	delete autoPrevoz_;
+	cout << objednavky_->size();
 	vymazZoZoznamu<Objednavka*>(*objednavky_);
 	delete objednavky_;
 	vymazZoZoznamu<Polozka*>(*sklad_);

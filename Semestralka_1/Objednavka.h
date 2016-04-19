@@ -6,14 +6,14 @@
 #include "Mineralna_voda.h"
 #include "Polozka.h"
 #include <string>
-#include "IUkladatelny.h"
+#include "Uloz.h"
 
 enum StavObjednavky
 {
 	soCAKAJUCA, soNEPLATNA, soODOSLANA, soVYEXPEDOVANA
 };
 
-class Objednavka : public IUkladatelny
+class Objednavka : public Uloz
 {
 public:
 	Objednavka(const Predajna & predajna, int datum);

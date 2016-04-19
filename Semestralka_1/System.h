@@ -48,7 +48,6 @@ public:
 	void vypisSkladu(); 
 	void vypisanieVsetkychPoziadaviekNeplat();
 	void ulozitDoSuboru(std::ostream& subor);
-	void nacitatZoSuboru(std::string& subor);
 
 	
 	bool kontrolaEAN(const std::string & ean);

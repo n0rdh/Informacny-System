@@ -14,5 +14,5 @@ void PrikazUkonci::pomoc()
 
 void PrikazUkonci::vykonaj()
 {
-	cout << "** Ukoncujem aplikaciu..." << endl;
+	cout << "** Ukoncenie" << endl;
 }

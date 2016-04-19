@@ -1,10 +1,10 @@
 #pragma once
 #include "Zakaznik.h"
 #include <iostream>
-#include "IUkladatelny.h"
+#include "Uloz.h"
 
 using namespace std;
-class Predajna : IUkladatelny
+class Predajna : Uloz
 {
 public:
 	Predajna(const std::string & menoZakaznika, const std::string& pAdresa, const  int pZona);

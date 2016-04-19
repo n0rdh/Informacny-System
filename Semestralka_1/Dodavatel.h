@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
-#include "IUkladatelny.h"
+#include "Uloz.h"
 
-class Dodavatel : public IUkladatelny
+class Dodavatel : public Uloz
 {
 public: 
 	Dodavatel(const std::string& nazov, const std::string& adresa);

@@ -153,11 +153,11 @@
     <ClInclude Include="PrikazZakaznik.h">
       <Filter>Header Files\Prikaz\Prikazy</Filter>
     </ClInclude>
-    <ClInclude Include="IUkladatelny.h">
-      <Filter>Header Files\Prikaz</Filter>
-    </ClInclude>
     <ClInclude Include="Polozka.h">
       <Filter>Header Files\Aplikacia</Filter>
+    </ClInclude>
+    <ClInclude Include="Uloz.h">
+      <Filter>Header Files\Prikaz</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -85,6 +85,7 @@ bool System::pridanieNovehoZakaznika(const string& meno,
 	}
 	Zakaznik* novyZakaznik = new Zakaznik(meno, adresa);
 	zakaznici_->add(novyZakaznik);
+	cout << "$ Pridany zakaznik s nazvom '" << meno << "' " << endl;
 	return true;
 }
 // PRIDANIE PREDAJNE
@@ -184,7 +185,6 @@ bool System::zaevidovanieObjednavky(const string& zakaznik,
 	Predajna* predajnaInst = najdiPredajnu(predajna);
 	Objednavka *objednavka = new Objednavka(*predajnaInst, datumDorucenia);
 
-	// Vybratie poloziek z nacitaneho retazca
 	int pocetOddelovacov = static_cast<int>(count(polozky.begin(), polozky.end(), '|'));
 	int pocetPoloziek = pocetOddelovacov + 1;
 	int bytePrecitaneCelkovo = 0;
@@ -194,7 +194,7 @@ bool System::zaevidovanieObjednavky(const string& zakaznik,
 		char nazov[30];
 		int mnozstvo;
 
-		if (i == (pocetPoloziek - 1)) // spracovavame posledny
+		if (i == (pocetPoloziek - 1))
 		{
 			sscanf(polozky.c_str() + bytePrecitaneCelkovo, "%s %d%n", nazov, &mnozstvo,
 				&bytePrecitaneTeraz);
@@ -207,19 +207,18 @@ bool System::zaevidovanieObjednavky(const string& zakaznik,
 
 		bytePrecitaneCelkovo += bytePrecitaneTeraz;
 
-		cout << "\tVoda: " << nazov << " s mnozstvom " << mnozstvo << endl;
+		cout << "\tmineralka: " << nazov << " s mnozstvom " << mnozstvo << endl;
 
 		Mineralna_voda* minVodaInst = najdiMineralnuVodu(string(nazov));
 		if (minVodaInst == nullptr)
 		{
-			cerr << "Neexistujuca mineralna voda!" << endl;
+			cerr << "~ Neexistujuca mineralna voda" << endl;
 			delete objednavka; // TODO Treba zmazat aj jednotlive polozky
 			return false;
 		}
 
 		objednavka->pridajPolozku(*minVodaInst, mnozstvo);
 	}
-
 	sklad_->zaevidujObjednavku(objednavka);
 
 	return true;
@@ -272,7 +271,7 @@ void System::vypisanieVsetkychPoziadaviekNeplat()
 	sklad_->vypisNeplatneObjednavky();
 }
 // ULOZENIE DO SUBORU
-void System::ulozitDoSuboru(ostream& subor)	   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+void System::ulozitDoSuboru(ostream& subor)
 {
 	for (auto zakaznik : *zakaznici_)
 	{
@@ -295,11 +294,6 @@ void System::ulozitDoSuboru(ostream& subor)	   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	}
 
 	sklad_->ulozDoSuboru(subor);
-}
-// NACITANIE ZO SUBORU
-void System::nacitatZoSuboru(string& subor)		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-{
-
 }
 // ODOVZDANIE ZAKAZNIKOVI
 void System::odovzdanieZakaznikovi()

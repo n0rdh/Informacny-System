@@ -181,7 +181,7 @@
     <ClInclude Include="DSRoutines.h" />
     <ClInclude Include="IPrikaz.h" />
     <ClInclude Include="Iterator.h" />
-    <ClInclude Include="IUkladatelny.h" />
+    <ClInclude Include="Uloz.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Mineralna_voda.h" />

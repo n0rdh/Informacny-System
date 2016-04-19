@@ -16,7 +16,7 @@ void PrikazSklad::pomoc()
 {
 	cout << "** sklad vyskladni" << endl;
 	cout << "** sklad odovzdaj" << endl;
-	cout << "** sklad vypisSklad" << endl;
+	cout << "** sklad vypis" << endl;
 }
 
 void PrikazSklad::vykonaj()
@@ -33,7 +33,7 @@ void PrikazSklad::vykonaj()
 		{
 			System::dajInstanciu().odovzdanieZakaznikovi();
 		}
-		else if (_param[1] == "vypisSklad" && _param[2].empty())
+		else if (_param[1] == "vypis" && _param[2].empty())
 		{
 			System::dajInstanciu().vypisSkladu();
 		}

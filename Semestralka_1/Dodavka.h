@@ -1,9 +1,9 @@
 #pragma once
 #include "Mineralna_voda.h"
 #include "Datum.h"
-#include "IUkladatelny.h"
+#include "Uloz.h"
 
-class Dodavka : IUkladatelny
+class Dodavka : Uloz
 {	  
 public:
 	Dodavka(const Mineralna_voda& mineralka, unsigned int mnozstvo, int datum);

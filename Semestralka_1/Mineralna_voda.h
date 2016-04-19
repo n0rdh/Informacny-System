@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 #include "Dodavatel.h"
-#include "IUkladatelny.h"
+#include "Uloz.h"
 
-class Mineralna_voda  : public IUkladatelny
+class Mineralna_voda  : public Uloz
 {
 public:
 	Mineralna_voda(const std::string& nazovVody, const  std::string& ean,Dodavatel& dodavatel);

@@ -1,0 +1,57 @@
+dodavatel pridaj RajecSRO RajeckeTeplice
+dodavatel pridaj JanaSRO Prievidza
+dodavatel pridaj BudiskaSR Bratislava
+dodavatel pridaj BublinkaAS Ruzomberok
+zakaznik pridaj tesco Trencin
+zakaznik pridaj hypernova Kosice
+zakaznik pridaj bala Zvolen
+predajna pridaj tesco Papradno 2
+predajna pridaj tesco Stupne 5
+predajna pridaj tesco jasenica 1
+predajna pridaj hypernova praznov 3
+predajna pridaj hypernova terchova 1
+predajna pridaj bala zazriva 8
+predajna pridaj bala povazska 12
+predajna pridaj bala rozkvet 4
+mineralnavoda pridaj rajec 1234567891234 RajecSRO
+mineralnavoda pridaj rajecPerlivy 1298567801234 RajecSRO
+mineralnavoda pridaj jana 1298567898734 JanaSRO
+mineralnavoda pridaj budiska 1298978012347 BudiskaSR
+mineralnavoda pridaj bublinky 9298916513447 BublinkaAS 
+dodavka pridaj 9298916513447 1200 20160419 
+dodavka pridaj 1298567898734 100 20160419
+dodavka pridaj 1298978012347 1987 20160419
+dodavka pridaj 1234567891234 500 20160419
+dodavka pridaj 9298916513447 1200 20160410 
+dodavka pridaj 1298567898734 100 20150711
+dodavka pridaj 1298978012347 1987 20140419
+dodavka pridaj 1234567891234 500 20160409
+objednavka pridaj tesco Stupne 5 20161219
+1298567898734 30 
+1298978012347 12;
+objednavka pridaj tesco  jasenica 1 20160420
+1298567898734 61
+1298978012347 72
+1298567801234 730
+1298978012347 12
+1298567898734 13; 
+objednavka pridaj tesco jasenica 1 20160421
+9298916513447 301 
+1298978012347 112;
+objednavka pridaj tesco Papradno 5 20160420
+1298567898734 39 
+1234567891234 1200;
+objednavka pridaj hypernova praznov 3 20160426
+1298567898734 13 
+1298978012347 312;
+objednavka pridaj bala rozkvet 4 20160419
+1298567801234 730
+1298978012347 12
+1298567898734 13 
+1298978012347 312;
+objednavka pridaj bala povazska 12 20160427
+1298567801234 390 
+1298978012347 37;
+objednavka pridaj bala zazriva 8 20160421
+1298567801234 10 
+1298978012347 98;

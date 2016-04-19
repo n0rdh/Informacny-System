@@ -170,11 +170,24 @@ Objednavka::~Objednavka()
 {
 	for (auto polozka : *polozky_)
 	{
-		delete &polozka;
+		delete polozka;
 	}
 	delete polozky_;
 }
 string Objednavka::dajPrikazNaUlozenie() const
 {
-	return "objednavka pridaj " ;
+	string str = "objednavka pridaj " + predajna_->dajMenoZakaznika() + " "
+		+ predajna_->dajNazov() + " " + to_string(predajna_->dajZona()) + " " +
+		to_string(datum_->celeCislo()) + "\n";
+	for (int i = 0; i < static_cast<int>(polozky_->size()); i++)
+	{
+		string koniec = " \n";
+		if (i == (polozky_->size() - 1))
+		{
+			koniec = ";";
+		}
+		str += (*polozky_)[i]->dajMineralku().dajNazov() + " " +
+			to_string((*polozky_)[i]->dajMnozstvo()) + koniec;
+	}
+	return str;
 }
