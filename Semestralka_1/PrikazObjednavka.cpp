@@ -22,7 +22,7 @@ void PrikazObjednavka::pomoc()
 void PrikazObjednavka::vykonaj()
 {
 	if (parameter[2].empty()) {
-		throw runtime_error("~ Pradny vstup");
+		throw runtime_error("~ Prazdny vstup");
 	}
 	else if (parameter[1] == "pridaj" && parameter[7].empty() ) {
 		System::dajInstanciu().zaevidovanieObjednavky(parameter[2], parameter[3],

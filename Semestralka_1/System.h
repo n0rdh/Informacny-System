@@ -25,11 +25,11 @@ public:
 	bool pridanieNovejPredajne(const std::string& menoZakaznika,	  
 							   const std::string& adresa, 
 							   const std::string& zona);
-	bool zaevidovanieObjednavky(const std::string& adresaPredajna,
-								const std::string& datumDorucenia,
-								const std::string& nazovMV,
-								const std::string& mnozstvo,
-								const std::string& polozky);
+	bool System::zaevidovanieObjednavky(const string& zakaznik,
+		                                const string& predajna,
+		                                const string& zona,
+		                                const string& datumDoruceniaS,
+		                                const string& polozky);
 	bool zaevidovanieNovejDodavky(const std::string& nazovMV,
 								  const std::string& mnozstvo,
 								  const std::string& datumPlnenia);

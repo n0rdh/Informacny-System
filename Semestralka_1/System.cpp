@@ -161,17 +161,15 @@ bool System::zaevidovanieNovejDodavky(const string& ean,
 	cout << "$ Pridana dodavka mineralok '" << ean << "' - '" << mineralka->dajNazov() << "'" << endl;
 	return true; 		
 } 
+
 // ZAEVIDOVANIE OBJEDNAVKY
-bool System::zaevidovanieObjednavky(const string& adresaPredajna,
+bool System::zaevidovanieObjednavky(const string& zakaznik,
+									const string& predajna,
+									const string& zona,
 									const string& datumDoruceniaS,
-									const string& ean,
-									const string& mnozstvoS,
 									const string& polozky)
 {
-	int mnozstvo = prevedNaInt(mnozstvoS);
 	int datumDorucenia = prevedNaInt(datumDoruceniaS);
-	if (!kontrolaEAN(ean)) return false;
-	int i = 0;
 	if (kontrolaDatumu(datumDorucenia))
 	{
 		return false;
@@ -183,23 +181,47 @@ bool System::zaevidovanieObjednavky(const string& adresaPredajna,
 		return false;
 	}
 	*/
-	Mineralna_voda* voda = najdiMineralnuVodu(ean);
-	if (voda == nullptr)
+	Predajna* predajnaInst = najdiPredajnu(predajna);
+	Objednavka *objednavka = new Objednavka(*predajnaInst, datumDorucenia);
+
+	// Vybratie poloziek z nacitaneho retazca
+	int pocetOddelovacov = static_cast<int>(count(polozky.begin(), polozky.end(), '|'));
+	int pocetPoloziek = pocetOddelovacov + 1;
+	int bytePrecitaneCelkovo = 0;
+	for (int i = 0; i < pocetPoloziek; i++)
 	{
-		cerr << "~ Mineralna voda " << ean << " neexistuje!" << endl;
-		return false;
+		int bytePrecitaneTeraz = 0;
+		char nazov[30];
+		int mnozstvo;
+
+		if (i == (pocetPoloziek - 1)) // spracovavame posledny
+		{
+			sscanf(polozky.c_str() + bytePrecitaneCelkovo, "%s %d%n", nazov, &mnozstvo,
+				&bytePrecitaneTeraz);
+		}
+		else
+		{
+			sscanf(polozky.c_str() + bytePrecitaneCelkovo, "%s %d %*c%n", nazov, &mnozstvo,
+				&bytePrecitaneTeraz);
+		}
+
+		bytePrecitaneCelkovo += bytePrecitaneTeraz;
+
+		cout << "\tVoda: " << nazov << " s mnozstvom " << mnozstvo << endl;
+
+		Mineralna_voda* minVodaInst = najdiMineralnuVodu(string(nazov));
+		if (minVodaInst == nullptr)
+		{
+			cerr << "Neexistujuca mineralna voda!" << endl;
+			delete objednavka; // TODO Treba zmazat aj jednotlive polozky
+			return false;
+		}
+
+		objednavka->pridajPolozku(*minVodaInst, mnozstvo);
 	}
-	Predajna * predaj = najdiPredajnu(adresaPredajna);
-	if (predaj == nullptr)
-	{ 
-		cout << "~ Predajna na adrese '" << adresaPredajna << "' neexistuje !" << endl;
-		return false;
-	}
-	Objednavka* novaObjednavka = new Objednavka(*predaj, datumDorucenia);
-	novaObjednavka->pridajPolozku(*voda, mnozstvo);		// TODO Pridavanie viacerich
-	sklad_->zaevidujObjednavku(novaObjednavka);
-	cout << "$ Pridana objednavka min.vod '" << ean << "' - "
-		 << mnozstvo << " ks" << endl;
+
+	sklad_->zaevidujObjednavku(objednavka);
+
 	return true;
 }		
 // KONTROLA POZIADAVIEK ZAKAZNIKA 

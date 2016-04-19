@@ -46,7 +46,6 @@ void PrikazProgram::nacitajZoSuboru()
 {
 	ifstream subor;
 	subor.open("testovanie.txt");
-	//subor.open("sklad_data.txt");
 	Parser parser(&subor);
 
 	while (true)
