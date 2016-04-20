@@ -14,7 +14,7 @@ PrikazDodavatel::~PrikazDodavatel()
 void PrikazDodavatel::pomoc()
 {
 	cout << "** dodavatel pridaj |meno| |adresa|" << endl;
-	cout << "** dodavatel najdiMax |odkedy| |dokedy|" << endl;
+	cout << "** dodavatel najdimax |odkedy| |dokedy|" << endl;
 }
 
 void PrikazDodavatel::vykonaj()

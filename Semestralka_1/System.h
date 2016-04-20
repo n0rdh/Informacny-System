@@ -48,20 +48,6 @@ public:
 	void vypisSkladu(); 
 	void vypisanieVsetkychPoziadaviekNeplat();
 	void ulozitDoSuboru(std::ostream& subor);
-
-	
-	bool kontrolaEAN(const std::string & ean);
-	void nastavDatum();
-	void zoradPole(DS::ArrayList<std::string>& pole);
-	int prevedNaInt(const std::string & naInt);
-	Dodavatel* najdiDodavatela(const std::string& nazov);
-	Mineralna_voda* najdiMineralnuVodu(const std::string& nazov);
-	Zakaznik * najdiZakaznika(const std::string & nazov);
-	Predajna * najdiPredajnu(const std:: string & adresa);
-	bool kontrolaDatumu(int datum);
-	template <typename T>
-	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
-
 	~System();
 
 private:	  
@@ -71,4 +57,16 @@ private:
 	DS::ArrayList<Predajna*>* predajne_;
 	DS::ArrayList<Mineralna_voda*>* mineralky_;
 	DS::ArrayList<Dodavatel*>* dodavatelia_;
+
+	bool kontrolaEAN(const std::string & ean);
+	void nastavDatum();
+	void zoradPole(DS::ArrayList<std::string>& pole);
+	int prevedNaInt(const std::string & naInt);
+	Dodavatel* najdiDodavatela(const std::string& nazov);
+	Mineralna_voda* najdiMineralnuVodu(const std::string& nazov);
+	Zakaznik * najdiZakaznika(const std::string & nazov);
+	Predajna * najdiPredajnu(const std::string & adresa);
+	bool kontrolaDatumu(int datum);
+	template <typename T>
+	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
 };

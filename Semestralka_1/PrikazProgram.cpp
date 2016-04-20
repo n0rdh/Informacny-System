@@ -53,7 +53,7 @@ void PrikazProgram::nacitajZoSuboru()
 		IPrikaz* prikaz = parser.nacitajPrikaz();
 		if (prikaz == nullptr)
 		{
-			cout << "$ HOTOVO, nacitane" << endl;
+			cout << "$ Nacitane" << endl;
 			break;
 		}
 		try

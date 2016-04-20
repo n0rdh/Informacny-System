@@ -7,7 +7,6 @@ Objednavka::Objednavka(const Predajna & predajna, int datum) :
 	datum_(new Datum(datum)),
 	polozky_(new ArrayList<Polozka*>())
 {
-	odoslanie_ = false;
 	stavObjednavky_ = soCAKAJUCA;
 }
 
@@ -22,7 +21,6 @@ Objednavka & Objednavka::operator=(const Objednavka & objednakaD)
 {
 	if (this != &objednakaD) {
 		predajna_ = objednakaD.predajna_;
-		odoslanie_ = objednakaD.odoslanie_;
 		stavObjednavky_ = objednakaD.stavObjednavky_;
 		*polozky_ = *objednakaD.polozky_;
 	}
@@ -63,19 +61,21 @@ string Objednavka::vypisObjednavku() const
 {
 	string str;
 	int i = 0;
-	for (auto &polozka : *polozky_)
-	{
 		i++;  
-		str.append(" - ");
-		str.append(polozka->dajMineralku().dajNazov());
-		str.append(" - ");
-		str.append(to_string(polozka->dajMnozstvo()));
-		str.append(" - ");
+		str.append("	 - ");
 		str.append(datum_->toString());
 		str.append(" - ");
 		str.append(dajStavObjednavky());
+		str.append(" \n ");
+		for (auto polozka : *polozky_)
+		{
+			str.append("	      - ");
+			str.append(polozka->dajMineralku().dajNazov());
+			str.append(" - ");
+			str.append(to_string(polozka->dajMnozstvo()));
+			str.append(" \n ");
+		}
 		if (i > 1) { str.append("\n"); }
-	}
 	return str;
 }		
 
@@ -132,7 +132,7 @@ bool Objednavka::jeVyexpedovana() const
 
 bool Objednavka::oznacNeplatnu()
 {
-	if (stavObjednavky_ == soCAKAJUCA && odoslanie_ != true) {
+	if (stavObjednavky_ == soCAKAJUCA) {
 		stavObjednavky_ = soNEPLATNA;
 		return true;
 	}
@@ -144,7 +144,7 @@ bool Objednavka::oznacNeplatnu()
 
 bool Objednavka::oznacOdoslana()
 {
-	if (stavObjednavky_ == soCAKAJUCA && odoslanie_ == true) {
+	if (stavObjednavky_ == soVYEXPEDOVANA) {
 		stavObjednavky_ = soODOSLANA;
 		return true;
 	}
@@ -186,7 +186,7 @@ string Objednavka::dajPrikazNaUlozenie() const
 		{
 			koniec = ";";
 		}
-		str += (*polozky_)[i]->dajMineralku().dajNazov() + " " +
+		str += (*polozky_)[i]->dajMineralku().dajEAN() + " " +
 			to_string((*polozky_)[i]->dajMnozstvo()) + koniec;
 	}
 	return str;

@@ -16,7 +16,6 @@ public:
 																	
 	bool zaevidujObjednavku(Objednavka * pObjednavka);
 	bool zaevidujDodavku(Dodavka * pDodavka);
-
 	void vyskladnenie(int datum);
 	void vyhladanieDodavatela(int odkedy, int dokedy);
 	void vyhladanieOdberatelaVody(const std::string & voda, int odkedy, int dokedy);
@@ -26,18 +25,7 @@ public:
 	void vypisVsetkyObjednavky();
 	void vypisSklad();
 	void kontrolaPoziadaviek();
-	void zoradDodavky();
-	void zaskladni();
-	void pripravVyskladnenieMnozstvoDodavky(Objednavka * objednavka);
-	bool pripravVyskladnenieMnozstvoSklad(Objednavka * objednavka);
-	void triedeniePoloziek(DS::ArrayList<Polozka*>& polozky);
-	
 	void ulozDoSuboru(std::ostream& subor);
-	void vyprazdnitAuto();
-	void zoradPole(DS::ArrayList<std::string>& pole);
-	template <typename T>
-	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
-
 
 	~Velkosklad();
 
@@ -46,4 +34,14 @@ private:
 	DS::Stack<Objednavka*>* autoPrevoz_;
 	DS::LinkedList<Dodavka*>* dodavky_;
 	DS::ArrayList<Objednavka*>* objednavky_;
+
+	void vyprazdnitAuto();
+	void zoradDodavky();
+	void zaskladni();
+	void zoradPole(DS::ArrayList<std::string>& pole);
+	template <typename T>
+	void vymazZoZoznamu(DS::ArrayList<T>& zoznam);
+	void triedeniePoloziek(DS::ArrayList<Polozka*>& polozky);
+	void pripravVyskladnenieUpravDodavky(Objednavka * objednavka);
+	bool skontrolujMnozstvoVsklade(Objednavka * objednavka);
 };

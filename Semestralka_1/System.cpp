@@ -145,12 +145,12 @@ bool System::zaevidovanieNovejDodavky(const string& ean,
 	int mnozstvo = prevedNaInt(mnozstvoS);
 	int datumPlnenia = prevedNaInt(datumPlneniaS);
 	if (!kontrolaEAN(ean)) return false;
-	if (kontrolaDatumu(datumPlnenia))
+	if (kontrolaDatumu(datumPlnenia)) return false;
+	if (datumPlnenia > aktualDatum_)
 	{
-		cout << "~ Neplatny datum " << endl;
+		cout << "~ Datum plnenia este nenastal " << endl;
 		return false;
 	}
-
 	Mineralna_voda * mineralka = najdiMineralnuVodu(ean);
 	if (mineralka == nullptr)
 	{
@@ -171,8 +171,10 @@ bool System::zaevidovanieObjednavky(const string& zakaznik,
 									const string& polozky)
 {
 	int datumDorucenia = prevedNaInt(datumDoruceniaS);
-	if (kontrolaDatumu(datumDorucenia))
+	if (kontrolaDatumu(datumDorucenia))	return false;
+	if (datumDorucenia < aktualDatum_)
 	{
+		cout << "~ Datum objednavky je stary " << endl;
 		return false;
 	}
 	/*
@@ -193,7 +195,6 @@ bool System::zaevidovanieObjednavky(const string& zakaznik,
 		int bytePrecitaneTeraz = 0;
 		char nazov[30];
 		int mnozstvo;
-
 		if (i == (pocetPoloziek - 1))
 		{
 			sscanf(polozky.c_str() + bytePrecitaneCelkovo, "%s %d%n", nazov, &mnozstvo,
@@ -204,19 +205,15 @@ bool System::zaevidovanieObjednavky(const string& zakaznik,
 			sscanf(polozky.c_str() + bytePrecitaneCelkovo, "%s %d %*c%n", nazov, &mnozstvo,
 				&bytePrecitaneTeraz);
 		}
-
 		bytePrecitaneCelkovo += bytePrecitaneTeraz;
-
 		cout << "\tmineralka: " << nazov << " s mnozstvom " << mnozstvo << endl;
-
 		Mineralna_voda* minVodaInst = najdiMineralnuVodu(string(nazov));
 		if (minVodaInst == nullptr)
 		{
 			cerr << "~ Neexistujuca mineralna voda" << endl;
-			delete objednavka; // TODO Treba zmazat aj jednotlive polozky
+			delete objednavka;
 			return false;
 		}
-
 		objednavka->pridajPolozku(*minVodaInst, mnozstvo);
 	}
 	sklad_->zaevidujObjednavku(objednavka);

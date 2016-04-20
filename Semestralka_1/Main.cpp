@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 	cout << "**************************************************************** " << endl;
-	cout << "		    Semestralna praca 1			    " << endl;
+	cout << "		    Semestralna praca 1					" << endl;
 	cout << "		  autor Tomas Illo 5ZI02B			    " << endl;
 	cout << "		System pre sklad mineralnych vod	    " << endl;
 	cout << "*****************************************************************" << endl;

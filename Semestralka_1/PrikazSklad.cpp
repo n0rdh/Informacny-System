@@ -17,6 +17,7 @@ void PrikazSklad::pomoc()
 	cout << "** sklad vyskladni" << endl;
 	cout << "** sklad odovzdaj" << endl;
 	cout << "** sklad vypis" << endl;
+	cout << "** sklad kontrola" << endl;
 }
 
 void PrikazSklad::vykonaj()
@@ -36,6 +37,10 @@ void PrikazSklad::vykonaj()
 		else if (_param[1] == "vypis" && _param[2].empty())
 		{
 			System::dajInstanciu().vypisSkladu();
+		}
+		else if (_param[1] == "kontrola" && _param[2].empty())
+		{
+			System::dajInstanciu().kontrolaPoziadaviekZ();
 		}
 		else {
 			throw runtime_error("~ Neplatny prikaz");

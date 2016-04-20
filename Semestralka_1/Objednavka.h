@@ -46,5 +46,4 @@ private:
 	const Predajna * predajna_;
 	StavObjednavky stavObjednavky_;
 	Datum* datum_;
-	bool odoslanie_;
 };

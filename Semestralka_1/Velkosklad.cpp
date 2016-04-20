@@ -74,8 +74,8 @@ void Velkosklad::vyskladnenie(int datum)
 		if (objednavka->dajDatumDorucenia() == datum + 1 
 			&& objednavka->jeCakajuca())
 		{
-			if (pripravVyskladnenieMnozstvoSklad(objednavka)) continue;
-			pripravVyskladnenieMnozstvoDodavky(objednavka);
+			if (skontrolujMnozstvoVsklade(objednavka)) continue;
+			pripravVyskladnenieUpravDodavky(objednavka);
 			zoradenie->push(objednavka->dajPredajnu().dajZona(), objednavka);
 			objednavka->oznacVyexpedovanu();
 		}
@@ -92,7 +92,6 @@ void Velkosklad::vyskladnenie(int datum)
 	delete zoradenie;
 	cout << "$ Vsetky platne objednavky odpisane zo skladu. \n  Tovar nalozeny do auta." << endl;
 }
-
  
 void Velkosklad::vyhladanieOdberatelaVody(const string & voda, int odkedy, int dokedy)
 {
@@ -220,7 +219,6 @@ void Velkosklad::vyhladanieDodavatela(int odkedy, int dokedy)
 	delete pozadovanePolozky;
 }
 
-
 void Velkosklad::triedeniePoloziek(ArrayList<Polozka*>& polozky)
 {
 	for (auto polozkaTriedena1 : polozky)
@@ -273,7 +271,6 @@ void Velkosklad::kontrolaPoziadaviek()
 			}
 		}								   			
 	}
-	int i = 0;
 	for (auto polozkaVypis : *pozadovanePolozky)
 	{
 		if (polozkaVypis->dajMnozstvo() > 0)
@@ -286,14 +283,8 @@ void Velkosklad::kontrolaPoziadaviek()
 			pom.append(to_string(polozkaVypis->dajMnozstvo()));
 			pom.append(" ks ");
 			vypisZoradenie->add(pom);
-			i++;
 		}
 	}	
-	if (i == 0)
-	{
-		cout << "        - Nechybaju ziadne vody\n" << endl;
-		return;
-	}
 	zoradPole(*vypisZoradenie);
 	for (auto vyp : *vypisZoradenie)	
 	{
@@ -321,8 +312,7 @@ void Velkosklad::zoradDodavky()
 	
 }
 
-
-void Velkosklad::zaskladni()	// funkcne
+void Velkosklad::zaskladni()
 {
 	if (sklad_->size() != 0)
 	{
@@ -382,6 +372,8 @@ void Velkosklad::vypisSklad()
 	for (auto polozka : *sklad_)
 	{
 		pom = "";
+		pom.append(polozka->dajMineralku().dajNazovDodavatela());
+		pom.append(" - ");
 		pom.append(polozka->dajMineralku().dajNazov());
 		pom.append(" - ");
 		pom.append(to_string(polozka->dajMnozstvo()));
@@ -396,7 +388,7 @@ void Velkosklad::vypisSklad()
 	delete vypisZoradenie;
 }
 
-bool Velkosklad::pripravVyskladnenieMnozstvoSklad(Objednavka * objednavka)
+bool Velkosklad::skontrolujMnozstvoVsklade(Objednavka * objednavka)
 {
 	for (auto polozka : *objednavka->dajPolozky())
 	{
@@ -418,16 +410,16 @@ bool Velkosklad::pripravVyskladnenieMnozstvoSklad(Objednavka * objednavka)
 	return false;
 }
 
-void Velkosklad::pripravVyskladnenieMnozstvoDodavky(Objednavka * objednavka)
+void Velkosklad::pripravVyskladnenieUpravDodavky(Objednavka * objednavka)
 {
 	int mnozstvo = 0;
 	for (auto polozka : *objednavka->dajPolozky())
 	{
-		mnozstvo = polozka->dajMnozstvo();		  // ulozim pozadovane mnoztvo
+		mnozstvo = polozka->dajMnozstvo();
 		for (auto dodavka : *dodavky_)
 		{
-			if (polozka->dajMineralku().dajNazov() == dodavka->dajMinetralku()->dajNazov()// skontrolujem ci sa jedna o rovnaku vodu
-				&& dodavka->dajMnozstvo() - mnozstvo > 0)// ak je dodavka vacsia ako mnozstvo, tak ju znizim
+			if (polozka->dajMineralku().dajNazov() == dodavka->dajMinetralku()->dajNazov()
+				&& dodavka->dajMnozstvo() - mnozstvo > 0)
 			{
 				dodavka->znizMnozstvo(mnozstvo);
 				break;
@@ -482,7 +474,6 @@ void Velkosklad::vymazZoZoznamu(DS::ArrayList<T>& zoznam)
 	}
 	zoznam.clear();
 }
-
 
 void Velkosklad::ulozDoSuboru(std::ostream& subor)
 {

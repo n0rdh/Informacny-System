@@ -6,11 +6,11 @@ using namespace std;
 
 Datum::Datum(int datum)
 {
-	int rok = datum;      // 20201230
-	den_ = datum % 100;	 //	 30
-	rok /= 100;		 //	 202012
-	mesiac_ = rok % 100; //	 12
-	rok /= 100;	 //	 2020
+	int rok = datum;    
+	den_ = datum % 100;	 
+	rok /= 100;		
+	mesiac_ = rok % 100; 
+	rok /= 100;	
 	rok_ = rok;
 	
 }
