@@ -9,7 +9,7 @@ PrikazUkonci::PrikazUkonci()
 
 void PrikazUkonci::pomoc()
 {
-	cout << "** Ukonci aplikaciu." << endl;
+	cout << "** Ukonci " << endl;
 }
 
 void PrikazUkonci::vykonaj()

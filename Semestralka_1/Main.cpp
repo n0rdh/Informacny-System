@@ -24,7 +24,7 @@ int main()
 				IPrikaz* prikaz = parser.nacitajPrikaz();
 				if (prikaz == nullptr)
 				{
-					cerr << "Nespravny prikaz!" << endl;
+					cerr << "~ Nespravny prikaz!" << endl;
 				}
 				else
 				{
@@ -34,13 +34,13 @@ int main()
 			}
 			catch (const std::exception& e)
 			{
-				cerr << "Chyba " << e.what() << endl;
+				cerr << "~ Chyba " << e.what() << endl;
 			}
 		}
 	}
 	catch (const std::exception& e)
 	{
-		cerr << "Chyba: " << e.what() << endl;
+		cerr << "~ Chyba: " << e.what() << endl;
 	}
 
 

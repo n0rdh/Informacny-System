@@ -215,9 +215,6 @@
     <ClCompile Include="PrikazDodavka.cpp">
       <Filter>Source Files\Prikaz\Prikazy</Filter>
     </ClCompile>
-    <ClCompile Include="PrikazMineralnaVoda.cpp">
-      <Filter>Source Files\Prikaz\Prikazy</Filter>
-    </ClCompile>
     <ClCompile Include="PrikazObjednavka.cpp">
       <Filter>Source Files\Prikaz\Prikazy</Filter>
     </ClCompile>
@@ -245,5 +242,11 @@
     <ClCompile Include="Polozka.cpp">
       <Filter>Source Files\Aplikacia</Filter>
     </ClCompile>
+    <ClCompile Include="PrikazMineralna_Voda.cpp">
+      <Filter>Source Files\Prikaz\Prikazy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

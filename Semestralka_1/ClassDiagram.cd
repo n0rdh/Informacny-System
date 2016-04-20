@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="DS::Array&lt;T&gt;" Collapsed="true">
+    <Position X="9.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAIAAAQhAAAEAAAJAAAAgkAAAAAA=</HashCode>
+      <FileName>Array.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::ArrayList&lt;T&gt;" Collapsed="true">
+    <Position X="11" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIAAAiAABAAAAACIgAgABQQAFAAAAAACAiEAECAAA=</HashCode>
+      <FileName>ArrayList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::DSRoutines" Collapsed="true">
+    <Position X="28.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAQAAAAAAAAI=</HashCode>
+      <FileName>DSRoutines.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::Iterator&lt;T&gt;" Collapsed="true">
+    <Position X="30" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAIgAAAAAQAAAAQAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Iterator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::Iterable&lt;T&gt;" Collapsed="true">
+    <Position X="7.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Iterator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::StructureIterator&lt;T&gt;" Collapsed="true">
+    <Position X="31.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAIAQAAAAAAAAAAAAAgEAAAAAA=</HashCode>
+      <FileName>Iterator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::LinkedList&lt;T&gt;" Collapsed="true">
+    <Position X="13.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAACABBQAAAACIEABARQQAEAAAAAAAAgEAEGAAA=</HashCode>
+      <FileName>LinkedList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::List&lt;T&gt;" Collapsed="true">
+    <Position X="15.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAACAABAAAAAiIIAAAAQQAEAAAAAAAAgEAECAAI=</HashCode>
+      <FileName>List.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::PriorityQueue&lt;T&gt;" Collapsed="true">
+    <Position X="16.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAAAAQAIAAAAAAAAIAAAIAIAAAAAAAAAAAoEAAAQAA=</HashCode>
+      <FileName>PriorityQueue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::PriorityQueue_ArrayList&lt;T&gt;" Collapsed="true">
+    <Position X="16.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PriorityQueue_ArrayList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::PriorityQueue_ArrayList_Sorted&lt;T&gt;" Collapsed="true">
+    <Position X="15.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAACIAAAAAAAAAAAAAoEAAAAAA=</HashCode>
+      <FileName>PriorityQueue_ArrayList_Sorted.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::PriorityQueue_Heap&lt;T&gt;" Collapsed="true">
+    <Position X="17.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAACIAAAAAAAAAAAAAoEIAAAAE=</HashCode>
+      <FileName>PriorityQueue_Heap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::PriorityQueue_List&lt;T&gt;" Collapsed="true">
+    <Position X="16.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAEQAAAAAAAAAAIAACAAIAAAAAAAAAQAgABAAQAA=</HashCode>
+      <FileName>PriorityQueue_List.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::Stack&lt;T&gt;" Collapsed="true">
+    <Position X="30" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAQAAAAAAAAACIAAAIAAgAAAAAAAAAAoABAAQAA=</HashCode>
+      <FileName>Stack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::Structure" Collapsed="true">
+    <Position X="15.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAgEAAAAAA=</HashCode>
+      <FileName>Structure.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::DataItem&lt;T&gt;" Collapsed="true">
+    <Position X="1.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQAIAAAAAAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>StructureItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::LinkedItem&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAIAIGAAAAAAA=</HashCode>
+      <FileName>StructureItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::PriorityItem&lt;T&gt;" Collapsed="true">
+    <Position X="2.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAQAAAAAAgAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>StructureItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DS::Vector" Collapsed="true">
+    <Position X="20" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIiAAAAAAAIgIAQxAAAEAAAIAAEBgEAAAAAA=</HashCode>
+      <FileName>Vector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datum" Collapsed="true">
+    <Position X="26.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAAAABAAAAAAAAAAABARAAAwCAAAAAAAAIAgAAAA=</HashCode>
+      <FileName>Datum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dodavatel" Collapsed="true">
+    <Position X="6.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAAAAAAAAEAAAAACgBAAAAAAAAABAAAgAAAAAAA=</HashCode>
+      <FileName>Dodavatel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dodavka" Collapsed="true">
+    <Position X="8.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAiAAAAgACAAAEAAAAABAAAAAAAAAQAAAAgAMAgAAA=</HashCode>
+      <FileName>Dodavka.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mineralna_voda" Collapsed="true">
+    <Position X="10.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgIAAAAAAAAAAAAACAgQAAACAAAAAAEAAgAAQACAA=</HashCode>
+      <FileName>Mineralna_voda.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Objednavka" Collapsed="true">
+    <Position X="15.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAFgQAAQAEAAAAAAEAAAAEAEAAASQAAIAgAkABAAIAA=</HashCode>
+      <FileName>Objednavka.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polozka" Collapsed="true">
+    <Position X="28.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAggAAAAEAAAAgAAAAAAAAAIQhAAAgAIAAAAA=</HashCode>
+      <FileName>Polozka.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Predajna" Collapsed="true">
+    <Position X="17.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAEAAAAAAAAAQAAACgACAAAIAAAABAAAgAAAABAA=</HashCode>
+      <FileName>Predajna.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System" Collapsed="true">
+    <Position X="26.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAABIggKgIAAAEEDIAAAgCAiEAgBCIAkICAmAg=</HashCode>
+      <FileName>System.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Velkosklad" Collapsed="true">
+    <Position X="28.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAQEIggBgAAQCACEQAAIAAABhABAmAAYAABAAg=</HashCode>
+      <FileName>Velkosklad.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zakaznik" Collapsed="true">
+    <Position X="13" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAEAAAAAAAIAAAAAgBAAAAAAAAABAAAgAAAAAAA=</HashCode>
+      <FileName>Zakaznik.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IPrikaz" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="2.25" />
+    <Members>
+      <Method Name="~IPrikaz" Hidden="true" />
+      <Method Name="IPrikaz" Hidden="true" />
+      <Method Name="pomoc" Hidden="true" />
+      <Method Name="vykonaj" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CAAgAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPrikaz.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uloz" Collapsed="true">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <Members>
+      <Method Name="~Uloz" Hidden="true" />
+      <Method Name="dajPrikazNaUlozenie" Hidden="true" />
+      <Method Name="Uloz" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Uloz.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NazvyPrikazov" Collapsed="true">
+    <Position X="31.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAACAAAA=</HashCode>
+      <FileName>NazvyPrikazov.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parser" Collapsed="true">
+    <Position X="26.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAgAAgAAAAAAAAAAAAAAAAAAAEAgAAEAABA=</HashCode>
+      <FileName>Parser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazDodavatel" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAAAAAAAgAAAIAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PrikazDodavatel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazDodavka" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAIAAgQAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PrikazDodavka.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazMineralnaVoda" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAIACAQAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>PrikazMineralnaVoda.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazObjednavka" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAJQAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>PrikazObjednavka.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazPomoc" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <Members>
+      <Method Name="~PrikazPomoc" Hidden="true" />
+      <Method Name="pomoc" Hidden="true" />
+      <Method Name="PrikazPomoc" Hidden="true" />
+      <Method Name="vykonaj" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAQAAAAAAAAAAAAAIAAAQAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PrikazPomoc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazPrazdny" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PrikazPrazdny.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazPredajna" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAIAAAQAAAAAJAAAAAAAAAAA=</HashCode>
+      <FileName>PrikazPredajna.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazProgram" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAACAAAAAAAIAAAQAAAAAAAEAAAEABAAA=</HashCode>
+      <FileName>PrikazProgram.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazSklad" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAIAAAQABAAAAAACAAAAAAAA=</HashCode>
+      <FileName>PrikazSklad.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazUkonci" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAQAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PrikazUkonci.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrikazZakaznik" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="IPrikaz" FixedFromPoint="true">
+      <Path>
+        <Point X="7.312" Y="1.062" />
+        <Point X="7.312" Y="1.375" />
+        <Point X="5.75" Y="1.375" />
+        <Point X="5.75" Y="3.125" />
+        <Point X="6.75" Y="3.125" />
+        <Point X="6.75" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAIAAAQAAAAAAAAQAAAAAgAA=</HashCode>
+      <FileName>PrikazZakaznik.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="DS::byte" Collapsed="true">
+    <Position X="26.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Structure.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="StavObjednavky" Collapsed="true">
+    <Position X="26.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAAAAAAAAAAQAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Objednavka.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
